@@ -11,7 +11,6 @@ namespace SchoolTemplate.Controllers
     public IActionResult Index()
     {
             //string connectionString = "Server=172.16.160.21;Port=3306;Database=109875;Uid=109875;Pwd=SprOmyro;";
-            // test toch swa
             //using (MySqlConnection conn = new MySqlConnection(connectionString))
             //{
             //  conn.Open();
