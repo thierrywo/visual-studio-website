@@ -10,26 +10,26 @@ namespace SchoolTemplate.Controllers
   {
     public IActionResult Index()
     {
-      //string connectionString = "Server=172.16.160.21;Port=3306;Database=;Uid=;Pwd=;";
-   
-      //using (MySqlConnection conn = new MySqlConnection(connectionString))
-      //{
-      //  conn.Open();
-      //  MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+            //string connectionString = "Server=172.16.160.21;Port=3306;Database=109875;Uid=109875;Pwd=SprOmyro;";
 
-      //  using (var reader = cmd.ExecuteReader())
-      //  {
-      //    while (reader.Read())
-      //    {
+            //using (MySqlConnection conn = new MySqlConnection(connectionString))
+            //{
+            //  conn.Open();
+            //  MySqlCommand cmd = new MySqlCommand("select * from product", conn);
 
-      //      int Id = Convert.ToInt32(reader["Id"]);
-      //      string Name = reader["Naam"].ToString();
-      //    }
-      //  }
+            //  using (var reader = cmd.ExecuteReader())
+            //  {
+            //    while (reader.Read())
+            //    {
 
-      //}
+            //      int Id = Convert.ToInt32(reader["Id"]);
+            //      string Name = reader["Naam"].ToString();
+            //    }
+            //  }
 
-      return View();
+            //}
+
+            return View();
     }
 
     public IActionResult Privacy()
