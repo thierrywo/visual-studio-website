@@ -2,3 +2,23 @@
     background-color: #2CA1E9;
 }
 
+ul.topnav {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #2c7be9;
+}
+
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+ul.topnav li.right {
+    float: right;
+}
