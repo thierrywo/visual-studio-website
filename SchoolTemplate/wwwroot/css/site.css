@@ -24,6 +24,10 @@ ul.topnav li.right {
     float: right;
 }
 
+.footer-fotos {
+    width : 10%;
+
+}
 
 .footer-tekst {
     text-align: center;
