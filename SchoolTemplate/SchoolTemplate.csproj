@@ -5,6 +5,18 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Fotos\coverfoto.png" />
+    <None Include="wwwroot\Fotos\email.png" />
+    <None Include="wwwroot\Fotos\facebook.png" />
+    <None Include="wwwroot\Fotos\instagram.png" />
+    <None Include="wwwroot\Fotos\profielembleem.png" />
+    <None Include="wwwroot\Fotos\tussenlogosearchbar.png" />
+    <None Include="wwwroot\Fotos\twitter.png" />
+    <None Include="wwwroot\Fotos\websitelogo.jpg" />
+    <None Include="wwwroot\Fotos\winkelwagen.png" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
