@@ -22,3 +22,8 @@ ul.topnav li a {
 ul.topnav li.right {
     float: right;
 }
+
+
+.footer-tekst {
+    text-align: center;
+}
