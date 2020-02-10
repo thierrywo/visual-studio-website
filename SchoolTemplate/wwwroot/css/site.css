@@ -6,6 +6,7 @@ ul.topnav {
     list-style-type: none;
     overflow: hidden;
     background-color: #2c7be9;
+    margin-bottom: 0px;
 }
 
 ul.topnav li {
