@@ -1,7 +1,7 @@
 ﻿body {
     background-color: #2CA1E9;
     font-family: 'Titillium Web', sans-serif;
-    font-weight : bold;
+    font-weight: 900;
 }
 
 ul.topnav {
@@ -34,10 +34,11 @@ ul.topnav li.right {
 
 
 .footer-fotos {
-    width : 7%;
-    height: 100px;
-    position: relative;
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
 
+    position: relative;
 }
 
 .footer-foto {
