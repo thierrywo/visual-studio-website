@@ -15,49 +15,13 @@ namespace SchoolTemplate.Controllers
 
     public IActionResult Index()
     {
-      List<Product> products = new List<Product>();
+      List<Product> festivals = new List<Product>(); 
             // uncomment deze regel om producten uit je database toe te voegen
-            products = GetProducts();
 
-      return View(products);
+      return View(festivals);
     }
 
-    private List<Product> GetProducts()
-    {
-      List<Product> products = new List<Product>();
 
-      using (MySqlConnection conn = new MySqlConnection(connectionString))
-      {
-        conn.Open();
-        MySqlCommand cmd = new MySqlCommand("select * from product", conn);
-
-        using (var reader = cmd.ExecuteReader())
-        {
-          while (reader.Read())
-          {
-            int Id = Convert.ToInt32(reader["Id"]);
-            string Naam = reader["Naam"].ToString();
-            float Calorieen = float.Parse(reader["calorieen"].ToString());
-            string Formaat = reader["Formaat"].ToString();
-            int Gewicht = Convert.ToInt32(reader["Gewicht"].ToString());
-            decimal Prijs = Decimal.Parse(reader["Prijs"].ToString());
-
-            Product p = new Product
-            {
-              Id = Convert.ToInt32(reader["Id"]),
-              Naam = reader["Naam"].ToString(),
-              Calorieen = float.Parse(reader["calorieen"].ToString()),
-              Formaat = reader["Formaat"].ToString(),
-              Gewicht = Convert.ToInt32(reader["Gewicht"].ToString()),
-              Prijs = Decimal.Parse(reader["Prijs"].ToString())
-            };
-            products.Add(p);
-          }
-        }
-      }
-
-      return products;
-    }
 
     public IActionResult Privacy()
     {
