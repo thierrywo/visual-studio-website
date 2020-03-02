@@ -33,9 +33,18 @@ namespace SchoolTemplate.Controllers
     {
       return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
+
     public IActionResult ShowAll()
     {
       return View();
+        }
+
+    [Route("festivals/{id}")]
+public IActionResult Festival(string id)
+        {
+            var model = GetFestival(id);
+            return View(model);
         }
     }
 }
