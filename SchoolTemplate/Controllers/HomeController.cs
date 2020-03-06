@@ -41,10 +41,34 @@ namespace SchoolTemplate.Controllers
         }
 
     [Route("festivals/{id}")]
-public IActionResult Festival(string id)
-        {
+    public IActionResult Festival(string id)
+      {
             var model = GetFestival(id);
             return View(model);
         }
+    }
+}
+
+private Festival Getfestival(string id)
+{
+    List<Festival> festivals = new List<Festival>();
+
+    using (MySqlConnection conn = new MySqlConnection(connectionString)
+    {
+        conn.Open();
+    MySqlCommand cmd = new MySqlCommand($"select * from product where id= {id}", conn);
+
+    using (var reader = cmd.ExecuteReader())
+    {
+        while (reader.Read())
+        {
+            festival p = new festival
+            {
+                Ìd = Convert.ToInt32(reader["id"]),
+                Naam = reader["Naam"].ToString()
+            }
+        festivals.Add(p);
+        }
+    }
     }
 }
