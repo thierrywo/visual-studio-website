@@ -83,6 +83,9 @@ namespace SchoolTemplate.Controllers
     [HttpPost]
     public IActionResult Contact(string vooornaam, string achternaam)
         {
+            ViewData["voornaam"] = voornaam;
+            ViewData["achternaam"] = achternaam;
+
             return View();
         }
   
