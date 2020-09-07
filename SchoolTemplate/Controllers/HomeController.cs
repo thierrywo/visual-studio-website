@@ -73,8 +73,22 @@ namespace SchoolTemplate.Controllers
       return festivals[0];
     }
 
+    [Route("contact")]
+    public IActionResult Contact()
+        {
+            return View();
+        }
 
-    private List<Festival> GetFestivals()
+    [Route("contact")]
+    [HttpPost]
+    public IActionResult Contact(string vooornaam, string achternaam)
+        {
+            return View();
+        }
+  
+
+
+        private List<Festival> GetFestivals()
     {
       List<Festival> festivals = new List<Festival>();
 
