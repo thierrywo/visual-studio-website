@@ -1,15 +1,24 @@
-﻿
+﻿@model Personmodel
 @{
     ViewData["Title"] = "contact";
 }
-
 <h1>contact</h1>
 
+@if (Model != null)
+{<p>
+        Je voornaam is: @Model.Voornaam <br />
+        Je achternaam is: @Model.Achternaam <br />
+    </p>
+
+}
+
 <form method="post">
-    <input type="text" name="voornaam" placeholder="Voornaam" />
-    <input type="text" name="achternaam" placeholder="Achternaam" />
-    <input type="datetime" name="geboortedatum" />
+    <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
+    <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
+    @Html.ValidationMessageFor(m => m.Achternaam)<br />
+    <input type="text" name="email" placeholder="e-mail" /> <br />
+    @Html.ValidationMessageFor(m => m.Email)<br />
+    <!-- <input type="datetime" name="geboortedatum" />  -->
     <input type="submit" value="verstuur" />
 </form>
-  
 
