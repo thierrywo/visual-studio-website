@@ -27,6 +27,11 @@ ul.topnav li.right {
     font-weight : bold;
 }
 
+ul.topnav li.left {
+    float: left;
+    font-weight: bold;
+}
+
 .footer {
     width: 100%;
     height: 100px;
