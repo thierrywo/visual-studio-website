@@ -4,14 +4,9 @@
 }
 <h1>contact</h1>
 
-@if (Model != null)
-{<p>
-        Je voornaam is: @Model.Voornaam <br />
-        Je achternaam is: @Model.Achternaam <br />
-    </p>
 
-}
-
+@if (ViewData["formsucces"] != "ök")
+{
 <form method="post">
     <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
     <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
@@ -21,4 +16,10 @@
     <!-- <input type="datetime" name="geboortedatum" />  -->
     <input type="submit" value="verstuur" />
 </form>
+}
+
+@if (ViewData["formsucces"] == "ök")
+{
+    <p>Uw gegevens zijn verstuurd <br> bedankt voor het invullen!</p>
+}
 

@@ -101,6 +101,8 @@ namespace SchoolTemplate.Controllers
 
             SavePerson(model);
 
+            ViewData["formsucces"] = "ök";
+
             return View();
         }
 
@@ -110,7 +112,6 @@ namespace SchoolTemplate.Controllers
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres) VALUES(?voornaam, ?achternaam,?email)", conn);
-
                 cmd.Parameters.Add("?voornaam", MySqlDbType.VarChar).Value = person.Voornaam;
                 cmd.Parameters.Add("?achternaam", MySqlDbType.VarChar).Value = person.Achternaam;
                 cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.Email;
