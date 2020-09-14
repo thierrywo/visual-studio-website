@@ -16,7 +16,7 @@ namespace SchoolTemplate.Controllers
     public IActionResult Index()
     {
       List<Festival> festivals = new List<Festival>();
-      // regel hierondor commenten om database uit te zetten
+      // regel hierondor commenten om database uit te zettenf
           festivals = GetFestivals();
       return View(festivals);
     }
@@ -72,6 +72,19 @@ namespace SchoolTemplate.Controllers
       }
       return festivals[0];
     }
+
+    [Route("HuisregelsFAQ")]
+    public IActionResult HuisregelsFAQ()
+        {
+            return View();
+        }
+
+    [Route("Transport")]
+    public IActionResult Transport()
+        {
+            return View();
+        }
+
 
     [Route("contact")]
     public IActionResult Contact()
