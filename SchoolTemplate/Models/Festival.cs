@@ -14,7 +14,7 @@ namespace SchoolTemplate.Database
 
     public string Headliners { get; set; }
 
-    public string Minimum_leeftijd { get; set; }
+    public int Minimum_leeftijd { get; set; }
 
   }
 }

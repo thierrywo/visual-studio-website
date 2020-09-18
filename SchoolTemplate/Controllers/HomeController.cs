@@ -47,7 +47,7 @@ namespace SchoolTemplate.Controllers
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from festival);
+                MySqlCommand cmd = new MySqlCommand($"select * from festival");
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -57,11 +57,11 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["ID"]),
                             Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["beschrijving"].ToString()
-                            Headliners = reader["Headliners"].ToString()
-                            Prijs = reader["Prijs"].ToString()
+                            Beschrijving = reader["beschrijving"].ToString(),
+                            Headliners = reader["Headliners"].ToString(),
+                            Prijs = Convert.ToDecimal(reader["Prijs"]),
                             //Plaatje =
-                            Minimum_leeftijd = reader["Prijs"].ToString()
+                            Minimum_leeftijd = Convert.ToInt32(reader["Minimum_leeftijd"]),
                         };
                         festivals.Add(p);
                     }
