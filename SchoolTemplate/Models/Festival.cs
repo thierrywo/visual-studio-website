@@ -10,14 +10,11 @@ namespace SchoolTemplate.Database
 
     public string Beschrijving { get; set; }    
 
-    /// <summary>
-    /// Gebruik altijd decimal voor geldzaken. Dit doe je om te voorkomen dat er afrondingsfouten optreden
-    /// </summary>
     public Decimal Prijs { get; set; }
 
-    public int Gewicht { get; set; }
+    public string Headliners { get; set; }
 
-    public float Calorieen { get; set; }
+    public string Minimum_leeftijd { get; set; }
 
   }
 }
