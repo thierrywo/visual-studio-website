@@ -40,21 +40,14 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
-        [Route("festivals/{id}")]
-        public IActionResult Festival(string id)
-        {
-            var model = GetFestival(id);
-            return View(model);
-        }
-
-        private Festival GetFestival(string id)
+        private List<Festival> GetFestivals(string id)
         {
             List<Festival> festivals = new List<Festival>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from product where id = {id}", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from festival");
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -62,15 +55,19 @@ namespace SchoolTemplate.Controllers
                     {
                         Festival p = new Festival
                         {
-                            Id = Convert.ToInt32(reader["Id"]),
+                            Id = Convert.ToInt32(reader["ID"]),
                             Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["beschrijving"].ToString()
+                            Beschrijving = reader["beschrijving"].ToString(),
+                            Headliners = reader["Headliners"].ToString(),
+                            Prijs = Convert.ToDecimal(reader["Prijs"]),
+                            //Plaatje =
+                            Minimum_leeftijd = Convert.ToInt32(reader["Minimum_leeftijd"]),
                         };
                         festivals.Add(p);
                     }
                 }
             }
-            return festivals[0];
+            return festivals;
         }
 
         [Route("HuisregelsFAQ")]
