@@ -60,7 +60,7 @@ namespace SchoolTemplate.Controllers
                             Beschrijving = reader["beschrijving"].ToString(),
                             Headliners = reader["Headliners"].ToString(),
                             Prijs = Convert.ToDecimal(reader["Prijs"]),
-                            //Plaatje =
+                            Plaatje = reader["Plaatje"].ToString()
                             Minimum_leeftijd = Convert.ToInt32(reader["Minimum_leeftijd"]),
                         };
                         festivals.Add(p);
