@@ -42,11 +42,13 @@ ul.topnav li a {
     text-align: center;
 }
 
-img {
-    width: 100%;
-}
-
 .website-logo {
     height: 10%;
     width: 10%;
+}
+
+.card {
+    height: 40%;
+    width: 40%;
+    padding: 5%;
 }
