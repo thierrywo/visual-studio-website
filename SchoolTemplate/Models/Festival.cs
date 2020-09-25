@@ -16,5 +16,7 @@ namespace SchoolTemplate.Database
 
     public int Minimum_leeftijd { get; set; }
 
+    public string Plaatje { get; set; }
+
   }
 }
