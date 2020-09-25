@@ -40,14 +40,14 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
-        private List<Festival> GetFestivals(string id)
+        private List<Festival> GetFestivals()
         {
             List<Festival> festivals = new List<Festival>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from festival");
+                MySqlCommand cmd = new MySqlCommand($"select * from festival", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -56,11 +56,11 @@ namespace SchoolTemplate.Controllers
                         Festival p = new Festival
                         {
                             Id = Convert.ToInt32(reader["ID"]),
-                            Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["beschrijving"].ToString(),
+                            Naam = reader["Titel"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
                             Headliners = reader["Headliners"].ToString(),
                             Prijs = Convert.ToDecimal(reader["Prijs"]),
-                            Plaatje = reader["Plaatje"].ToString()
+                            Plaatje = reader["Plaatje"].ToString(),
                             Minimum_leeftijd = Convert.ToInt32(reader["Minimum_leeftijd"]),
                         };
                         festivals.Add(p);
@@ -113,30 +113,6 @@ namespace SchoolTemplate.Controllers
                 cmd.Parameters.Add("?achternaam", MySqlDbType.VarChar).Value = person.Achternaam;
                 cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.Email;
                 cmd.ExecuteNonQuery();
-            }
-        }
-        private List<Festival> GetFestivals()
-        {
-            List<Festival> festivals = new List<Festival>();
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from festival", conn);
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Festival p = new Festival
-                        {
-                            Id = Convert.ToInt32(reader["id"]),
-                            Naam = reader["Titel"].ToString()
-                        };
-                        festivals.Add(p);
-                    }
-                }
-                return festivals;
             }
         }
     }
