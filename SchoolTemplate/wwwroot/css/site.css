@@ -46,3 +46,7 @@ ul.topnav li a {
     height: 10%;
     width: 10%;
 }
+
+.card-deck {
+    width: 18rem;
+}
