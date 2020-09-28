@@ -47,6 +47,15 @@ ul.topnav li a {
     width: 10%;
 }
 
-.card-deck {
-    width: 18rem;
+.display-4 {
+    width: auto;
+}
+
+.card-group > .card {
+    flex: 30%;
+    margin: 5%;
+}
+
+.card-group {
+    margin: 0px;
 }

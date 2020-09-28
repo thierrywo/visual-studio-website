@@ -4,20 +4,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-<img src="/Fotos/coverfoto.png" alt="coverfoto">
+<div class="cover-foto">
+<img src="/Fotos/coverfoto.png" class="img-fluid" alt="Responsive image">
+</div>
 
 <div class="text-center">
-    <h1 class="display-4">De logtenberg</h1>
+    <h1>De logtenberg</h1>
     <p>"Een prachtige locatie voor een prachtig feestje"</p>
 </div>
 
 
+<div class="card-group">
+    @foreach (Festival f in Model)
+    {
 
-@foreach (Festival f in Model)
-{
-<div class="row">
-    <div class="card-deck">
         <div class="card">
             <div class="view overlay">
                 <img class="card-img-top" src=@f.Plaatje
@@ -40,7 +40,6 @@
             </div>
 
         </div>
-    </div>
-</div>
-    }
 
+    }
+</div>
