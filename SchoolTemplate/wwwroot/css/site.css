@@ -54,6 +54,13 @@ ul.topnav li a {
 .card-group > .card {
     flex: 30%;
     margin: 5%;
+    background-color: #166BE7;
+    border-radius: 44px !important;
+}
+
+.card {
+    border: 0 !important;
+    border-radius: 44px !important;
 }
 
 .card-group {
