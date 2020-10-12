@@ -52,8 +52,7 @@ ul.topnav li a {
 }
 
 .card-group > .card {
-    flex: 30%;
-    margin: 5%;
+    flex: 40%;
     background-color: #166BE7;
     border-radius: 44px !important;
 }
@@ -61,8 +60,18 @@ ul.topnav li a {
 .card {
     border: 0 !important;
     border-radius: 44px !important;
+    margin-right: 5%;
+    margin-bottom: 5% !important;
+    text-align: center;
 }
 
 .card-group {
-    margin: 30px;
+    margin-left: 5%;
+}
+
+
+
+.btn-primary {
+    background-color: #19FFCF;
+
 }
