@@ -35,10 +35,10 @@ namespace SchoolTemplate.Controllers
         }
 
 
-        public IActionResult ShowAll()
-        {
-            return View();
-        }
+       // public IActionResult ShowAll()
+        //{
+          //  return View();
+        //}
 
         private List<Festival> GetFestivals()
         {
@@ -115,6 +115,14 @@ namespace SchoolTemplate.Controllers
                 cmd.ExecuteNonQuery();
             }
         }
+        [Route("show-all")]
+        public IActionResult ShowAll()
+        {
+            return View();
+        }
+
+        [Route("festival/{id}")]
+        public IActionResult Festival(string id)
     }
 }
 
