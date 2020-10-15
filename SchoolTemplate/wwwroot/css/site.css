@@ -73,6 +73,9 @@ ul.topnav li a {
   color: black !important;
 }
 
+  .btn-primary:hover {
+    background-color: #00EEFF;
+  }
 
 .transport-header {
   padding-bottom: 7.5%;
@@ -100,4 +103,9 @@ img {
 
 .map {
   align-content: center;
+}
+
+.justify-content-center {
+  margin-top: 10%;
+  margin-bottom: 10%;  
 }
