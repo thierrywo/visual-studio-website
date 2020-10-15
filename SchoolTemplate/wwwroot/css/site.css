@@ -101,9 +101,22 @@ img {
     max-width:200px;
 }
 
-.map {
-  align-content: center;
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
+
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    max-height: 50%;
+    max-width: 50%;
+    position: absolute;
+    margin: 25% ;
+  }
+
 
 .justify-content-center {
   margin-top: 10%;
