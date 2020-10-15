@@ -1,13 +1,13 @@
 ﻿@model Personmodel
 @{
-    ViewData["Title"] = "contact";
+  ViewData["Title"] = "contact";
 }
 <h1>contact</h1>
 
 
 @if (ViewData["formsucces"] != "ök")
 {
-<form method="post">
+  <form method="post">
     <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
     <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
     @Html.ValidationMessageFor(m => m.Achternaam)<br />
@@ -15,7 +15,7 @@
     @Html.ValidationMessageFor(m => m.Email)<br />
     <!-- <input type="datetime" name="geboortedatum" />  -->
     <input type="submit" value="verstuur" />
-</form>
+  </form>
 }
 
 @if (ViewData["formsucces"] == "ök")
