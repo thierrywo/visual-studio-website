@@ -103,18 +103,15 @@ img {
 
 .map-responsive {
   overflow: hidden;
-  padding-bottom: 56.25%;
+  padding-bottom: 5%;
   position: relative;
   height: 0;
 }
 
   .map-responsive iframe {
-    left: 0;
-    top: 0;
-    max-height: 50%;
-    max-width: 50%;
-    position: absolute;
-    margin: 25% ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
