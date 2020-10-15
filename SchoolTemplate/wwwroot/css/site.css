@@ -71,7 +71,6 @@ ul.topnav li a {
 
 .card-group {
     margin-left: 5%;
-    padding-top: 2.5%
 }
 
 .btn-primary {
@@ -143,4 +142,59 @@ img {
 .navbar-nav {
     flex-direction: row;
     justify-content: space-evenly;
+}
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-bottom: 5%;
+}
+textarea{
+  height:200px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  border:none;
+  float: right;
+}
+
+.formulier {
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
 }
