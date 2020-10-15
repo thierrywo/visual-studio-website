@@ -2,7 +2,7 @@
 @model List<Festival>
 @{
   ViewData["Title"] = "Home Page";
-}d
+}
 
 <div class="cover-foto">
   <img src="/Fotos/coverfoto.png" class="img-fluid" alt="Responsive image">
@@ -15,26 +15,26 @@
 
 
 <div class="card-group">
-  @foreach (Festival f in Model)
-  {
+    @foreach (Festival f in Model)
+    {
 
-    <div class="card" class="rounded">
-      <img class="card-img-top" src=@f.Plaatje
-           alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-      <div class="card-body">
-        <h4 class="card-title">@f.Naam</h4>
-
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the bulk of the card's
-          content.
-        </p>
-        <a href="/festivals/@f.Id" class="btn btn-primary">Lees meer</a>
-      </div>
-
-    </div>
-
+        <div class="card" class="rounded">
+            <div class="card-body">
+                <div class="card-body-header">
+                    <div class="festival-card-img">
+                        <img src=@f.Plaatje
+                         alt="Card image cap">
+                     </div>
+                  <div class="festival-card-text">
+                        <h4 class="card-title">@f.Naam</h4>
+                        <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's
+                        content.
+                        </p>
+                   </div>
+                </div>
+               <a href="/festivals/@f.Id" class="btn btn-primary">Lees meer</a>
+            </div>
+        </div>
   }
 </div>
