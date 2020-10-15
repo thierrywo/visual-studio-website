@@ -7,17 +7,55 @@
 
 @if (ViewData["formsucces"] != "ök")
 {
-<form method="post">
-  <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
-  <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
-  @Html.ValidationMessageFor(m => m.Achternaam)<br />
-  <input type="text" name="email" placeholder="e-mail" /> <br />
-  @Html.ValidationMessageFor(m => m.Email)<br />
-  <input type="text" name="bericht" placeholder="Bericht" /> <br />
-  @Html.ValidationMessageFor(m => m.Bericht)<br />
-  <!-- <input type="datetime" name="geboortedatum" />  -->
-  <input type="submit" value="verstuur" />
-</form>
+<div class="formulier">
+  <form method="post">
+
+    <div class="row">
+      <div class="col-25">
+        <label for="voornaam">Voornaam</label>
+      </div>
+      <div class="col-75">
+        <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="achternaam">Achternaam</label>
+      </div>
+      <div class="col-75">
+        <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
+        @Html.ValidationMessageFor(m => m.Achternaam)<br />
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="email">E-mail</label>
+      </div>
+      <div class="col-75">
+        <input type="text" name="email" placeholder="E-mail" /> <br />
+        @Html.ValidationMessageFor(m => m.Email)<br />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="bericht">Bericht</label>
+      </div>
+      <div class="col-75">
+        <textarea type="text" name="bericht" placeholder="Bericht" ></textarea> <br />
+        @Html.ValidationMessageFor(m => m.Bericht)<br />
+      </div>  
+    </div >
+    <div class="row">
+      <div class="submit">
+        <input class="btn-primary btn-lg" type="submit" value="verstuur" />
+      </div>
+    </div>
+  </form>
+</div>
 }
 
 @if (ViewData["formsucces"] == "ök")
