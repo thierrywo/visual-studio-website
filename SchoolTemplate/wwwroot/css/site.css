@@ -71,6 +71,7 @@ ul.topnav li a {
 
 .card-group {
     margin-left: 5%;
+    padding-top: 5%;
 }
 
 .btn-primary {
@@ -125,7 +126,6 @@ img {
 .justify-content-center {
   margin-top: 5%;
   margin-bottom: 5%;  
-
 }
 
 .transport-text{
@@ -143,10 +143,7 @@ img {
     flex-direction: row;
     justify-content: space-evenly;
 }
-    padding-top: 7%;
-    padding-bottom: 7%;
-    margin-bottom: 5%;
-}
+
 textarea{
   height:200px;
 }
