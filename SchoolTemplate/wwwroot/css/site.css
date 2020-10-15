@@ -1,7 +1,6 @@
 ﻿body {
     background-color: #2CA1E9;
     font-family: 'Titillium Web', sans-serif;
-    font-weight: 900;
 }
 
 .navbar-custom {
@@ -93,8 +92,4 @@ img {
 .festival-card-img {
     width:150px;
     heigth:150px;
-}
-
-.card-text {
-    max-width:200px;
 }
