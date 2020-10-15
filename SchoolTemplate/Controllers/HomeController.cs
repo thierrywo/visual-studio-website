@@ -109,10 +109,11 @@ namespace SchoolTemplate.Controllers
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
-        MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres) VALUES(?voornaam, ?achternaam,?email)", conn);
+        MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres, bericht) VALUES(?voornaam, ?achternaam,?email,?bericht)", conn);
         cmd.Parameters.Add("?voornaam", MySqlDbType.VarChar).Value = person.Voornaam;
         cmd.Parameters.Add("?achternaam", MySqlDbType.VarChar).Value = person.Achternaam;
         cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.Email;
+        cmd.Parameters.Add("?bericht", MySqlDbType.VarChar).Value = person.Bericht;
         cmd.ExecuteNonQuery();
       }
     }

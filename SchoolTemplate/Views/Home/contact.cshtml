@@ -7,15 +7,17 @@
 
 @if (ViewData["formsucces"] != "ök")
 {
-  <form method="post">
-    <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
-    <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
-    @Html.ValidationMessageFor(m => m.Achternaam)<br />
-    <input type="text" name="email" placeholder="e-mail" /> <br />
-    @Html.ValidationMessageFor(m => m.Email)<br />
-    <!-- <input type="datetime" name="geboortedatum" />  -->
-    <input type="submit" value="verstuur" />
-  </form>
+<form method="post">
+  <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
+  <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
+  @Html.ValidationMessageFor(m => m.Achternaam)<br />
+  <input type="text" name="email" placeholder="e-mail" /> <br />
+  @Html.ValidationMessageFor(m => m.Email)<br />
+  <input type="text" name="bericht" placeholder="Bericht" /> <br />
+
+  <!-- <input type="datetime" name="geboortedatum" />  -->
+  <input type="submit" value="verstuur" />
+</form>
 }
 
 @if (ViewData["formsucces"] == "ök")
