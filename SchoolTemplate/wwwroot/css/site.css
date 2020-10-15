@@ -97,7 +97,7 @@ img {
 
 .festival-card-img {
     width:150px;
-    heigth:150px;
+    height:150px;
 }
 
 .card-text {
@@ -127,4 +127,8 @@ img {
 .transport-text{
   margin-left:20px;
 
+}
+
+.header-index {
+    background-color: #00EEFF;
 }
