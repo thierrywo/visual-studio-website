@@ -14,6 +14,7 @@ namespace SchoolTemplate.Models
         [EmailAddress (ErrorMessage ="Geen geldig e-mail adres")]
         public string Email { get; set; }
         
+        [Required (ErrorMessage = "Gelieve een bericht achter te laten om contact op te nemen.")]
         public string Bericht { get; set; }
 
         public DateTime Geboortedatum { get; set; }

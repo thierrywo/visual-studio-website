@@ -14,7 +14,7 @@
   <input type="text" name="email" placeholder="e-mail" /> <br />
   @Html.ValidationMessageFor(m => m.Email)<br />
   <input type="text" name="bericht" placeholder="Bericht" /> <br />
-
+  @Html.ValidationMessageFor(m => m.Bericht)<br />
   <!-- <input type="datetime" name="geboortedatum" />  -->
   <input type="submit" value="verstuur" />
 </form>
