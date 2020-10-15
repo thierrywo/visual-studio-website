@@ -46,6 +46,11 @@ ul.topnav li a {
     width: 10%;
 }
 
+.nav-link {
+    height: 10%;
+    width: auto;
+}
+
 .display-4 {
     width: auto;
 }
@@ -131,6 +136,14 @@ img {
 
 .header-index {
     background-color: #00EEFF;
+    padding-bottom:2.5%;
+    padding-top:2.5%;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
     padding-top: 7%;
     padding-bottom: 7%;
     margin-bottom: 5%;
