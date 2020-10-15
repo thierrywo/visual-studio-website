@@ -73,16 +73,15 @@ ul.topnav li a {
 
 .btn-primary {
     background-color: white;
-    color: black;
-
+    color: black !important;
 }
 
 
 .transport-header {
-  padding-bottom: 7.5%;
-  padding-top: 7.5%;
-  background-color: #00EEFF;
-  text-align: center;
+    padding-bottom: 7.5%;
+    padding-top: 7.5%;
+    background-color: black;
+    text-align: center;
 }
 
 img {
