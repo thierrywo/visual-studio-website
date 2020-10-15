@@ -69,10 +69,13 @@ ul.topnav li a {
 }
 
 .btn-primary {
-    background-color: white;
-    color: black !important;
+  background-color: #19FFCF;
+  color: black !important;
 }
 
+  .btn-primary:hover {
+    background-color: #00EEFF;
+  }
 
 .transport-header {
   padding-bottom: 7.5%;
@@ -98,6 +101,24 @@ img {
     max-width:200px;
 }
 
-.map {
-  align-content: center;
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    max-height: 50%;
+    max-width: 50%;
+    position: absolute;
+    margin: 25% ;
+  }
+
+
+.justify-content-center {
+  margin-top: 10%;
+  margin-bottom: 10%;  
 }
