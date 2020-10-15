@@ -71,11 +71,14 @@ ul.topnav li a {
 .btn-primary {
   background-color: #19FFCF;
   color: black !important;
+  transition: transform .2s; 
 }
 
-  .btn-primary:hover {
+  .btn-primary:hover, btn-primary:active {
     background-color: #00EEFF;
+    transform: scale(1.05);
   }
+
 
 .transport-header {
   padding-bottom: 7.5%;
@@ -119,6 +122,12 @@ img {
 
 
 .justify-content-center {
-  margin-top: 10%;
-  margin-bottom: 10%;  
+  margin-top: 5%;
+  margin-bottom: 5%;  
+
+}
+
+.transport-text{
+  margin-left:20px;
+
 }
