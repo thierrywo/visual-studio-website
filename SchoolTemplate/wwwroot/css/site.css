@@ -76,10 +76,10 @@ ul.topnav li a {
 
 
 .transport-header {
-    padding-bottom: 7.5%;
-    padding-top: 7.5%;
-    background-color: black;
-    text-align: center;
+  padding-bottom: 7.5%;
+  padding-top: 7.5%;
+  background-color: #00EEFF;
+  text-align: center;
 }
 
 img {
@@ -97,4 +97,8 @@ img {
 
 .card-text {
     max-width:200px;
+}
+
+.map {
+  align-content: center;
 }
