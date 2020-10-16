@@ -1,7 +1,15 @@
-﻿@model SchoolTemplate.Database.Festival
+﻿@using SchoolTemplate.Database
+@model Festival
 @{
   ViewData["Title"] = "Festival";
+  List<Festival> prijzen = ViewData["prijzen"] as List<Festival>;
 }
-<h1>@Model.Naam</h1>
 
+<h1>@Model.Naam</h1>
 <p>@Model.Beschrijving</p> 
+
+<h3>Prijzen</h3>
+@foreach(Festival p in prijzen)
+{
+  @p.Prijs
+}
