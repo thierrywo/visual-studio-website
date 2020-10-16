@@ -58,7 +58,6 @@ ul.topnav li a {
 }
 
 .card-group-index > .card-group > .card {
-    flex: 40%;
     border-radius: 44px !important;
     border: 0 !important;
     border-radius: 44px !important;
@@ -212,8 +211,8 @@ input[type=submit] {
 }
 
 .card-group-festival > .card-group > .card {
-    width: 50%;
     text-align: center;
+    flex:50%;
 }
 
 .festival-foto {
@@ -249,7 +248,7 @@ input[type=submit] {
     background-color: #00EEFF;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575px) {
 
     .card-group .card:nth-child(1) {
         background-color: #166BE7;
