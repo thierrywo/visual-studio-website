@@ -21,5 +21,8 @@ namespace SchoolTemplate.Database
 
     public List<Artiest> Artiesten { get; set; }
 
+    public List<Prijs> Prijzen { get; set; }
+
+
   }
 }

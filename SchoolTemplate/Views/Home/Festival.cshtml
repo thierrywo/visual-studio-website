@@ -2,9 +2,17 @@
 @model Festival
 @{
   ViewData["Title"] = "Festival";
-  List<Festival> artiesten = ViewData["artiesten"] as List<Festival>;
+  //List<Festival> artiesten = ViewData["artiesten"] as List<Festival>;
 }
 
+<div class="linksboven">
+  <img src=@Model.Plaatje>
+  <a href=# class="btn btn-primary ">Koop Tickets</a>
+</div>
+
+<div class="rechtsboven">
+  <h3>@Model.Beschrijving</h3>
+</div>
 <h1>@Model.Naam</h1>
 <p>@Model.Beschrijving</p>
 
@@ -12,5 +20,16 @@
 
 @foreach (Artiest artiest in Model.Artiesten)
 {
-  <h3>@artiest.Dag1Act</h3>
+<div class="artiestenbox">
+  <h3>
+    "@artiest.Dag1Act
+    @artiest.Dag2Act
+    @artiest.Dag3Act"
+  </h3>
+</div>
+}
+
+@foreach(Prijs prijs in Model.Prijzen)
+{
+  <h3>@prijs.Dag1.</h3>
 }
