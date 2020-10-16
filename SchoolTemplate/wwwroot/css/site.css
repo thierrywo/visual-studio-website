@@ -55,13 +55,10 @@ ul.topnav li a {
     width: auto;
 }
 
-.card-group > .card {
+.card-group-index > .card-group > .card {
     flex: 40%;
     background-color: #166BE7;
     border-radius: 44px !important;
-}
-
-.card {
     border: 0 !important;
     border-radius: 44px !important;
     margin-right: 5%;
@@ -69,7 +66,7 @@ ul.topnav li a {
     text-align: center;
 }
 
-.card-group {
+.card-group-index > .card-group {
     margin-left: 5%;
     padding-top: 5%;
 }
@@ -204,4 +201,33 @@ input[type=submit] {
   overflow: auto;
   height: 200px;
   width: 200px;
+}
+
+.card-festival-group {
+    flex: 30%; 
+    flex-direction: row;
+}
+
+.card-group-festival > .card-group > .card {
+    width: 50%;
+    text-align: center;
+}
+
+.festival-foto {
+    width:60%;
+    margin:20%;
+}
+
+.card-group .card:nth-child(2n+2) {
+    background-color: #2CA1E9;
+}
+
+
+.card-group > .card {
+    flex: auto;
+}
+
+.scrollbox {
+    width: auto;
+    height: auto;
 }

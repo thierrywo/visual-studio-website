@@ -4,50 +4,54 @@
   ViewData["Title"] = "Festival";
   //List<Festival> artiesten = ViewData["artiesten"] as List<Festival>;
 }
+<div class="card-group-festival">
+    <div class="card-group">
+        <div class="card">
+            <img src=@Model.Plaatje class="festival-foto">
+            <a href=# class="btn btn-primary ">Koop Tickets</a>
+        </div>
 
-<div class="linksboven">
-  <img src=@Model.Plaatje>
-  <a href=# class="btn btn-primary ">Koop Tickets</a>
+        <div class="card">
+            <h3>@Model.Beschrijving</h3>
+        </div>
+
+        <div class="card">
+            @foreach (Artiest artiest in Model.Artiesten)
+            {
+                <div class="scrollbox">
+                    <h3>
+                        Dag 1: <br />
+                        @artiest.Dag1Act
+                    </h3>
+                    <h3> <br /></h3>
+                    <h3>
+                        Dag 2 <br />
+                        @artiest.Dag2Act
+                    </h3>
+                    <h3> <br /></h3>
+                    <h3>
+                        Dag 3<br />
+                        @artiest.Dag3Act
+                    </h3>
+                </div>
+            }
+        </div>
+
+        <div class="card">
+            @foreach (Prijs prijs in Model.Prijzen)
+            {
+                <div class="scrollbox">
+
+                    <h3>
+                        Dag 1:  @prijs.Dag1<br />
+                        Dag 2:  @prijs.Dag2<br />
+                        Dag 3   @prijs.Dag3<br />
+                        Weekend: @prijs.WeekendExcl<br />
+                        Weekend + Camping:  @prijs.WeekendIncl
+                    </h3>
+                </div>
+            }
+
+        </div>
+    </div>
 </div>
-
-<div class="rechtsboven">
-  <h3>@Model.Beschrijving</h3>
-</div>
-<h1>@Model.Naam</h1>
-<p>@Model.Beschrijving</p>
-
-<h3>artiesten</h3>
-
-@foreach (Artiest artiest in Model.Artiesten)
-{
-  <div class="scrollbox">
-    <h3>
-      Dag 1: <br />
-      @artiest.Dag1Act
-    </h3>
-    <h3> <br /></h3>
-    <h3>
-      Dag 2 <br />
-      @artiest.Dag2Act
-    </h3>
-    <h3> <br /></h3>
-    <h3>
-      Dag 3<br />
-      @artiest.Dag3Act
-    </h3>
-  </div>
-}
-
-@foreach (Prijs prijs in Model.Prijzen)
-{
-  <div class="scrollbox">
-
-    <h3>
-      Dag 1:  @prijs.Dag1<br />
-      Dag 2:  @prijs.Dag2<br />
-      Dag 3   @prijs.Dag3<br />
-      Weekend: @prijs.WeekendExcl<br />
-      Weekend + Camping:  @prijs.WeekendIncl
-    </h3>
-  </div>
-}
