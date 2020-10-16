@@ -76,6 +76,7 @@ ul.topnav li a {
     color: black !important;
     transition: transform .2s;
     margin-top: 5%;
+    border-color: #19FFCF;
 }
 
   .btn-primary:hover, btn-primary:active {
