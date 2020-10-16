@@ -2,14 +2,15 @@
 @model Festival
 @{
   ViewData["Title"] = "Festival";
-  List<Festival> prijzen = ViewData["prijzen"] as List<Festival>;
+  List<Festival> artiesten = ViewData["artiesten"] as List<Festival>;
 }
 
 <h1>@Model.Naam</h1>
-<p>@Model.Beschrijving</p> 
+<p>@Model.Beschrijving</p>
 
-<h3>Prijzen</h3>
-@foreach(Festival p in prijzen)
+<h3>artiesten</h3>
+
+@foreach (Artiest artiest in Model.Artiesten)
 {
-  @p.Prijs
+  <h3>@artiest.Dag1Act</h3>
 }

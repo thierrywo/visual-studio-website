@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SchoolTemplate.Database
 {
@@ -17,6 +18,8 @@ namespace SchoolTemplate.Database
     public int Minimum_leeftijd { get; set; }
 
     public string Plaatje { get; set; }
+
+    public List<Artiest> Artiesten { get; set; }
 
   }
 }

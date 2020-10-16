@@ -12,7 +12,7 @@ namespace SchoolTemplate.Controllers
   public class HomeController : Controller
   {
     // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
-    string connectionString = "Server=172.16.160.21 ;Port=3306;Database=109875;Uid=109875;Pwd=SprOmyro;";
+    string connectionString = "Server=informatica.st-maartenscollege.nl ;Port=3306;Database=109875;Uid=109875;Pwd=SprOmyro;";
 
         public IActionResult Index()
     {
@@ -48,7 +48,7 @@ namespace SchoolTemplate.Controllers
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
                 conn.Open();
-        MySqlCommand cmd = new MySqlCommand($"select * from festival", conn);
+        MySqlCommand cmd = new MySqlCommand($"select * from festival ", conn);
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -127,7 +127,7 @@ namespace SchoolTemplate.Controllers
     public IActionResult Festival(string id)
     {
       var model = GetFestival(id);
-      ViewData["prijzen"] = GetFestivals();
+      ViewData["artiesten"] = GetFestivals();
 
       return View(model);
     }
@@ -139,17 +139,34 @@ namespace SchoolTemplate.Controllers
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
+        MySqlCommand artiestencmd = new MySqlCommand($"select * from artiesten where FestivalId = {id}", conn);
+        List<Artiest> artiesten = new List<Artiest>();
+
+        using (var artiestenreader = artiestencmd.ExecuteReader())
+        {
+          while (artiestenreader.Read())
+          {
+            Artiest artiest = new Artiest
+            {
+              Dag1Act = artiestenreader["Dag1Act"].ToString(),
+            };
+            artiesten.Add(artiest);
+          }
+        }
+
         MySqlCommand cmd = new MySqlCommand($"select * from festival where id = {id}", conn);
 
         using (var reader = cmd.ExecuteReader())
         {
           while (reader.Read())
           {
-            Festival p = new Festival
+
+                Festival p = new Festival
             {
               Id = Convert.ToInt32(reader["Id"]),
               Naam = reader["Titel"].ToString(),
               Beschrijving = reader["Beschrijving"].ToString(),
+              Artiesten = artiesten,
             };
             festivals.Add(p);
           }
