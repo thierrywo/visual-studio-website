@@ -5,17 +5,44 @@
 }
 <div class="Huisregels">
   <h2>Huisregels</h2>
-  @foreach(Huisregel huisregel in Model.huisregels)
+  @foreach (Huisregel huisregel in Model.huisregels)
   {
-    <h3>@huisregel.Regel</h3>
+    <button class="accordion">@huisregel.Regel</button>
+    <div class="panel">
+      <p>@huisregel.Toelichting</p>
+    </div>
   }
 </div>
+
 
 <div class="FAQ">
   <h2>FAQ</h2>
   @foreach (FAQ faq in Model.faqs)
   {
-    <h3>@faq.FAQtekst.</h3>
+<button class="accordion">@faq.FAQtekst</button>
+    <div class="panel">
+      <p>@faq.antwoord</p>
+    </div>
   }
 
 </div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }</script>
