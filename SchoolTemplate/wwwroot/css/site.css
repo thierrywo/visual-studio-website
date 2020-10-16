@@ -195,10 +195,6 @@ input[type=submit] {
   }
 }
 
-.row-button {
-    justify-content: flex-end;
-}
-
 .scrollbox {
   overflow: auto;
   height: 200px;
@@ -282,4 +278,13 @@ input[type=submit] {
     .scrollbox {
         width: auto;
         height: auto;
+    }
+
+    .h1, h1 {
+        text-align: center;
+    }
+
+    .row-button {
+        justify-content: flex-end;
+
     }
