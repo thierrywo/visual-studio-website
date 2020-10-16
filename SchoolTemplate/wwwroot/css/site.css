@@ -43,7 +43,9 @@ ul.topnav li a {
 }
 
 .website-logo {
-    width: 10%;
+    max-width: 3rem;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .nav-link {
@@ -71,9 +73,10 @@ ul.topnav li a {
 }
 
 .btn-primary {
-  background-color: #19FFCF;
-  color: black !important;
-  transition: transform .2s; 
+    background-color: #19FFCF;
+    color: black !important;
+    transition: transform .2s;
+    margin-top: 5%;
 }
 
   .btn-primary:hover, btn-primary:active {
@@ -138,6 +141,7 @@ img {
 .navbar-nav {
     flex-direction: row;
     justify-content: space-evenly;
+    width:100%;
 }
 
 textarea {
@@ -221,14 +225,6 @@ input[type=submit] {
     background-color: #166BE7;
 }
 
-.card-group .card:nth-child(4) {
-    background-color: #166BE7;
-}
-
-.card-group .card:nth-child(5) {
-    background-color: #166BE7;
-}
-
 .card-group .card:nth-child(2) {
     background-color: #00EEFF;
 }
@@ -237,13 +233,54 @@ input[type=submit] {
     background-color: #00EEFF;
 }
 
+.card-group .card:nth-child(3) {
+    background-color: #00EEFF;
+}
+
+.card-group .card:nth-child(4) {
+    background-color: #166BE7;
+}
+
+.card-group .card:nth-child(5) {
+    background-color: #166BE7;
+}
+
 .card-group .card:nth-child(6) {
     background-color: #00EEFF;
 }
 
-.card-group > .card {
-    flex: auto;
-} .scrollbox {
-    width: auto;
-    height: auto;
+@media screen and (max-width: 600px) {
+
+    .card-group .card:nth-child(1) {
+        background-color: #166BE7;
+    }
+
+    .card-group .card:nth-child(2) {
+        background-color: #00EEFF;
+    }
+
+    .card-group .card:nth-child(3) {
+        background-color: #166BE7;
+    }
+
+    .card-group .card:nth-child(4) {
+        background-color: #00EEFF;
+    }
+
+    .card-group .card:nth-child(5) {
+        background-color: #166BE7;
+    }
+
+    .card-group .card:nth-child(6) {
+        background-color: #00EEFF;
+    }
 }
+
+    .card-group > .card {
+        flex: auto;
+    }
+
+    .scrollbox {
+        width: auto;
+        height: auto;
+    }
