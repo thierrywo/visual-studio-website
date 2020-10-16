@@ -128,6 +128,8 @@ namespace SchoolTemplate.Controllers
     {
       var model = GetFestival(id);
       ViewData["artiesten"] = GetFestivals();
+      ViewData["prijzen"] = GetFestivals();
+
 
       return View(model);
     }
@@ -139,6 +141,24 @@ namespace SchoolTemplate.Controllers
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
+        MySqlCommand prijzencmd = new MySqlCommand($"select * from prijzen where PrijsId = {id}", conn);
+        List<Prijs> prijzen = new List<Prijs>();
+
+        using (var prijzenreader = prijzencmd.ExecuteReader())
+        {
+          while (prijzenreader.Read())
+          {
+            Prijs prijs = new Prijs
+            {
+              Dag1 = prijzenreader["Dag1"].ToString(),
+              Dag2 = prijzenreader["Dag2"].ToString(),
+              Dag3 = prijzenreader["Dag3"].ToString(),
+
+            };
+            prijzen.Add(prijs);
+          }
+        }
+
         MySqlCommand artiestencmd = new MySqlCommand($"select * from artiesten where FestivalId = {id}", conn);
         List<Artiest> artiesten = new List<Artiest>();
 
@@ -149,6 +169,9 @@ namespace SchoolTemplate.Controllers
             Artiest artiest = new Artiest
             {
               Dag1Act = artiestenreader["Dag1Act"].ToString(),
+              Dag2Act = artiestenreader["Dag2Act"].ToString(),
+              Dag3Act = artiestenreader["Dag3Act"].ToString(),
+
             };
             artiesten.Add(artiest);
           }
@@ -167,7 +190,9 @@ namespace SchoolTemplate.Controllers
               Naam = reader["Titel"].ToString(),
               Beschrijving = reader["Beschrijving"].ToString(),
               Artiesten = artiesten,
-            };
+              Plaatje  = reader["Plaatje"].ToString(),
+              Prijzen = prijzen,
+                };
             festivals.Add(p);
           }
         }

@@ -199,3 +199,9 @@ input[type=submit] {
 .row-button {
     justify-content: flex-end;
 }
+
+.artiestenbox {
+  overflow: auto;
+  height: 200px;
+  width: 200px;
+}
