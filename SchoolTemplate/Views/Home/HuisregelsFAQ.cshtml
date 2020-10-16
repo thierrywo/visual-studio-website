@@ -11,6 +11,11 @@
   }
 </div>
 
-    <div class="FAQ">
-    <h2>FAQ</h2>
-  </div>
+<div class="FAQ">
+  <h2>FAQ</h2>
+  @foreach (FAQ faq in Model.faqs)
+  {
+    <h3>@faq.FAQtekst.</h3>
+  }
+
+</div>

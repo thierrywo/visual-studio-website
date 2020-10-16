@@ -7,7 +7,7 @@ namespace SchoolTemplate.Database
   {
     public List<Huisregel> huisregels { get; set; }
 
-    public List<FAQ> FAQs { get; set; }
+    public List<FAQ> faqs { get; set; }
 
 
 

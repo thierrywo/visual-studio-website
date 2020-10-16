@@ -75,15 +75,15 @@ namespace SchoolTemplate.Controllers
       huisregels = GetHuisregels();
 
       List<FAQ> faqs = new List<FAQ>();
-      faqs = GetFaqs();
+      faqs = Getfaqs();
 
 
-      huisregelsFAQViewModel = new HuisregelsFAQViewModel
+      var huisregelsFAQViewModel = new HuisregelsFAQViewModel
       {
         huisregels = huisregels,
         faqs = faqs,
 
-      }
+      };
       return View(huisregelsFAQViewModel);
     }
 
@@ -114,6 +114,31 @@ namespace SchoolTemplate.Controllers
       }
     }
 
+    private List<FAQ> Getfaqs()
+    {
+      List<FAQ> faqs = new List<FAQ>();
+
+      using (MySqlConnection conn = new MySqlConnection(connectionString))
+      {
+        conn.Open();
+
+        MySqlCommand faqscmd = new MySqlCommand($"select * from faq ", conn);
+        using (var faqreader = faqscmd.ExecuteReader())
+        {
+          while (faqreader.Read())
+          {
+            FAQ faq= new FAQ
+            {
+              FAQId = faqreader["FAQId"].ToString(),
+              FAQtekst = faqreader["FAQ"].ToString(),
+              antwoord = faqreader["antwoord"].ToString(),
+            };
+            faqs.Add(faq);
+          }
+        }
+        return faqs;
+      }
+    }
 
 
 
