@@ -7,59 +7,59 @@
 
 @if (ViewData["formsucces"] != "ök")
 {
-<div class="formulier">
-  <form method="post">
+  <div class="formulier">
+    <form method="post">
 
-    <div class="row">
-      <div class="col-25">
-        <label for="voornaam">Voornaam</label>
+      <div class="row">
+        <div class="col-25">
+          <label for="voornaam">Voornaam</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
+        </div>
       </div>
-      <div class="col-75">
-        <input type="text" name="voornaam" placeholder="Voornaam" /> <br />
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-25">
-        <label for="achternaam">Achternaam</label>
+      <div class="row">
+        <div class="col-25">
+          <label for="achternaam">Achternaam</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
+          @Html.ValidationMessageFor(m => m.Achternaam)<br />
+        </div>
       </div>
-      <div class="col-75">
-        <input type="text" name="achternaam" placeholder="Achternaam" /> <br />
-        @Html.ValidationMessageFor(m => m.Achternaam)<br />
-      </div>
-    </div>
 
 
-    <div class="row">
-      <div class="col-25">
-        <label for="email">E-mail</label>
+      <div class="row">
+        <div class="col-25">
+          <label for="email">E-mail</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="email" placeholder="E-mail" /> <br />
+          @Html.ValidationMessageFor(m => m.Email)<br />
+        </div>
       </div>
-      <div class="col-75">
-        <input type="text" name="email" placeholder="E-mail" /> <br />
-        @Html.ValidationMessageFor(m => m.Email)<br />
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-25">
-        <label for="bericht">Bericht</label>
+      <div class="row">
+        <div class="col-25">
+          <label for="bericht">Bericht</label>
+        </div>
+        <div class="col-75">
+          <textarea type="text" name="bericht" placeholder="Bericht"></textarea> <br />
+          @Html.ValidationMessageFor(m => m.Bericht)<br />
+        </div>
       </div>
-      <div class="col-75">
-        <textarea type="text" name="bericht" placeholder="Bericht" ></textarea> <br />
-        @Html.ValidationMessageFor(m => m.Bericht)<br />
-      </div>  
-    </div >
-    <div class="row-button">
-      <div class="submit">
-        <input class="btn-primary btn-lg" type="submit" value="verstuur" />
+      <div class="row-button">
+        <div class="submit">
+          <input class="btn-primary btn-lg" type="submit" value="verstuur" />
+        </div>
       </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 }
 
 @if (ViewData["formsucces"] == "ök")
 {
-    <p>Uw gegevens zijn verstuurd <br> bedankt voor het invullen!!</p>
+  <p>Uw gegevens zijn verstuurd <br> bedankt voor het invullen!!</p>
 }
 
