@@ -20,16 +20,25 @@
 
 @foreach (Artiest artiest in Model.Artiesten)
 {
-<div class="artiestenbox">
-  <h3>
-    "@artiest.Dag1Act
-    @artiest.Dag2Act
-    @artiest.Dag3Act"
-  </h3>
-</div>
+  <div class="scrollbox">
+    <h3>
+      @artiest.Dag1Act
+      @artiest.Dag2Act
+      @artiest.Dag3Act
+    </h3>
+  </div>
 }
 
-@foreach(Prijs prijs in Model.Prijzen)
+@foreach (Prijs prijs in Model.Prijzen)
 {
-  <h3>@prijs.Dag1.</h3>
+  <div class="scrollbox">
+
+    <h3>
+      @prijs.Dag1<br />
+      @prijs.Dag2<br />
+      @prijs.Dag3<br />
+      @prijs.WeekendExcl<br />
+      @prijs.WeekendIncl
+    </h3>
+  </div>
 }

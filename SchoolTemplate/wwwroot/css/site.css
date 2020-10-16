@@ -200,7 +200,7 @@ input[type=submit] {
     justify-content: flex-end;
 }
 
-.artiestenbox {
+.scrollbox {
   overflow: auto;
   height: 200px;
   width: 200px;

@@ -153,7 +153,8 @@ namespace SchoolTemplate.Controllers
               Dag1 = prijzenreader["Dag1"].ToString(),
               Dag2 = prijzenreader["Dag2"].ToString(),
               Dag3 = prijzenreader["Dag3"].ToString(),
-
+              WeekendExcl = prijzenreader["WeekendExcl"].ToString(),
+              WeekendIncl = prijzenreader["WeekendIncl"].ToString(),
             };
             prijzen.Add(prijs);
           }
