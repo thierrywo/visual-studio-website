@@ -79,8 +79,9 @@ ul.topnav li a {
     border-color: #19FFCF;
 }
 
-  .btn-primary:hover, btn-primary:active {
-    background-color: #00EEFF;
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #00EEFF !important;
+    border: none !important;
     transform: scale(1.05);
   }
 
@@ -213,8 +214,10 @@ input[type=submit] {
 }
 
 .festival-foto {
-    width:60%;
-    margin:20%;
+    width:40%;
+    margin:auto;
+    margin-top: 5%;
+    
 }
 
 .card-group .card:nth-child(1) {
@@ -314,3 +317,7 @@ input[type=submit] {
         justify-content: flex-end;
 
     }
+
+.beschrijving{
+  margin: auto;
+}
