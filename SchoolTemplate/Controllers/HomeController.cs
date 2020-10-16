@@ -36,10 +36,7 @@ namespace SchoolTemplate.Controllers
     }
 
 
-    // public IActionResult ShowAll()
-    //{
-    //  return View();
-    //}
+
 
     private List<Festival> GetFestivals()
     {
@@ -74,8 +71,76 @@ namespace SchoolTemplate.Controllers
     [Route("HuisregelsFAQ")]
     public IActionResult HuisregelsFAQ()
     {
-      return View();
+      List<Huisregel> huisregels = new List<Huisregel>();
+      huisregels = GetHuisregels();
+
+      List<FAQ> faqs = new List<FAQ>();
+      faqs = Getfaqs();
+
+
+      var huisregelsFAQViewModel = new HuisregelsFAQViewModel
+      {
+        huisregels = huisregels,
+        faqs = faqs,
+
+      };
+      return View(huisregelsFAQViewModel);
     }
+
+
+    private List<Huisregel> GetHuisregels()
+    {
+      List<Huisregel> huisregels = new List<Huisregel>();
+
+      using (MySqlConnection conn = new MySqlConnection(connectionString))
+      {
+        conn.Open();
+
+        MySqlCommand huisregelscmd = new MySqlCommand($"select * from huisregel ", conn);
+        using (var huisregelreader = huisregelscmd.ExecuteReader())
+        {
+          while (huisregelreader.Read())
+          {
+            Huisregel huisregel = new Huisregel
+            {
+              HuisregelId = huisregelreader["HuisregelId"].ToString(),
+              Regel = huisregelreader["Regel"].ToString(),
+              Toelichting = huisregelreader["Toelichting"].ToString(),
+            };
+            huisregels.Add(huisregel);
+          }
+        }
+        return huisregels;
+      }
+    }
+
+    private List<FAQ> Getfaqs()
+    {
+      List<FAQ> faqs = new List<FAQ>();
+
+      using (MySqlConnection conn = new MySqlConnection(connectionString))
+      {
+        conn.Open();
+
+        MySqlCommand faqscmd = new MySqlCommand($"select * from faq ", conn);
+        using (var faqreader = faqscmd.ExecuteReader())
+        {
+          while (faqreader.Read())
+          {
+            FAQ faq= new FAQ
+            {
+              FAQId = faqreader["FAQId"].ToString(),
+              FAQtekst = faqreader["FAQ"].ToString(),
+              antwoord = faqreader["antwoord"].ToString(),
+            };
+            faqs.Add(faq);
+          }
+        }
+        return faqs;
+      }
+    }
+
+
 
     [Route("Transport")]
     public IActionResult Transport()
@@ -127,10 +192,6 @@ namespace SchoolTemplate.Controllers
     public IActionResult Festival(string id)
     {
       var model = GetFestival(id);
-      ViewData["artiesten"] = GetFestivals();
-      ViewData["prijzen"] = GetFestivals();
-
-
       return View(model);
     }
 
@@ -141,6 +202,7 @@ namespace SchoolTemplate.Controllers
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
+
         MySqlCommand prijzencmd = new MySqlCommand($"select * from prijzen where PrijsId = {id}", conn);
         List<Prijs> prijzen = new List<Prijs>();
 

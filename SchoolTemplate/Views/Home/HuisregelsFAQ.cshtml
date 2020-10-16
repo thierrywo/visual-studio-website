@@ -1,7 +1,21 @@
-﻿
+﻿@using SchoolTemplate.Database
+@model HuisregelsFAQViewModel
 @{
-    ViewData["Title"] = "HuisregelsFAQ";
+  ViewData["Title"] = "HuisregelsFAQ";
 }
+<div class="Huisregels">
+  <h2>Huisregels</h2>
+  @foreach(Huisregel huisregel in Model.huisregels)
+  {
+    <h3>@huisregel.Regel</h3>
+  }
+</div>
 
-<h2>HuisregelsFAQ</h2>
+<div class="FAQ">
+  <h2>FAQ</h2>
+  @foreach (FAQ faq in Model.faqs)
+  {
+    <h3>@faq.FAQtekst.</h3>
+  }
 
+</div>
