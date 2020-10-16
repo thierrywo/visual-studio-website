@@ -57,7 +57,6 @@ ul.topnav li a {
 
 .card-group-index > .card-group > .card {
     flex: 40%;
-    background-color: #166BE7;
     border-radius: 44px !important;
     border: 0 !important;
     border-radius: 44px !important;
@@ -218,16 +217,33 @@ input[type=submit] {
     margin:20%;
 }
 
-.card-group .card:nth-child(2n+2) {
-    background-color: #2CA1E9;
+.card-group .card:nth-child(1) {
+    background-color: #166BE7;
 }
 
+.card-group .card:nth-child(4) {
+    background-color: #166BE7;
+}
+
+.card-group .card:nth-child(5) {
+    background-color: #166BE7;
+}
+
+.card-group .card:nth-child(2) {
+    background-color: #00EEFF;
+}
+
+.card-group .card:nth-child(3) {
+    background-color: #00EEFF;
+}
+
+.card-group .card:nth-child(6) {
+    background-color: #00EEFF;
+}
 
 .card-group > .card {
     flex: auto;
-}
-
-.scrollbox {
+} .scrollbox {
     width: auto;
     height: auto;
 }
