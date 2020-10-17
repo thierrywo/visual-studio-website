@@ -15,9 +15,12 @@ namespace SchoolTemplate.Database
 
     public string Headliners { get; set; }
 
-    public int Minimum_leeftijd { get; set; }
+    public string Minimum_leeftijd { get; set; }
 
     public string Plaatje { get; set; }
+
+    public string Datum { get; set; }
+
 
     public List<Artiest> Artiesten { get; set; }
 

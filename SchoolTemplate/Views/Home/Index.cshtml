@@ -1,42 +1,49 @@
 ﻿@using SchoolTemplate.Database;
 @model List<Festival>
 @{
-    ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home Page";
 }
 
 <div class="cover-foto">
-    <img src="/Fotos/coverfoto.png" class="img-fluid" alt="Responsive image">
+  <img src="/Fotos/coverfoto.png" class="img-fluid" alt="Responsive image">
 </div>
 <div class="header-index">
-    <div class="text-center">
-        <h1>De Logtenberg</h1>
-        <p>"Een prachtige locatie voor een prachtig feestje"</p>
-    </div>
+  <div class="text-center">
+    <h1>De Logtenberg</h1>
+    <p>"Een prachtige locatie voor een prachtig feestje"</p>
+  </div>
 </div>
 
 <div class="card-group-index">
-    <div class="card-group">
-        @foreach (Festival f in Model)
-        {
+  <div class="card-group">
+    @foreach (Festival f in Model)
+    {
 
-            <div class="card" class="rounded">
-                <div class="card-body">
-                    <div class="card-body-header">
-                        <div class="festival-card-img">
-                            <img src=@f.Plaatje
-                                 alt="Card image cap">
-                        </div>
-                        <div class="festival-card-text">
-                            <h4 class="card-title">@f.Naam</h4>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
-                    </div>
-                    <a href="/festivals/@f.Id" class="btn btn-primary ">Lees meer</a>
-                </div>
+      <div class="card" class="rounded">
+        <div class="card-body index-card">
+          <div class="card-body-header">
+            <div class="festival-card-img">
+              <img src=@f.Plaatje
+                   alt="Card image cap">
             </div>
-        }
-    </div>
+            <div class="festival-card-text">
+              <h4 class="card-title">@f.Naam:</h4>
+              <p class="card-text">
+                <span style="font-size:20px; font-weight:900">
+                  Datum:
+                </span> @f.Datum <br />
+                <span style="font-size:20px; font-weight:900">Vanaf</span>: @f.Prijs  <br />
+                @Html.Raw(f.Minimum_leeftijd)<br />
+                <span style="font-size:20px; font-weight:900">
+                  Featuring:
+                </span>
+                @f.Headliners
+              </p>
+            </div>
+          </div>
+          <a href="/festivals/@f.Id" class="btn btn-primary ">Lees meer</a>
+        </div>
+      </div>
+    }
+  </div>
 </div>

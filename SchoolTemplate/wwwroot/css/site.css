@@ -5,82 +5,80 @@
 }
 
 .navbar-custom {
-    background-color: #2CA1E9;
-    border-color: #E7E7E7;
+  background-color: #2CA1E9;
+  border-color: #E7E7E7;
 }
 
 ul.topnav li a {
-    display: block;
-    color:black;
-    text-align: center;
-    padding: 14px 16px;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
 }
 
 .footer {
-    width: 100%;
-    height: 100px;
-    border-top-style: solid;
-    border-top-color: #FFF;
+  width: 100%;
+  height: 100px;
+  border-top-style: solid;
+  border-top-color: #FFF;
 }
 
 
 .footer-fotos {
-    list-style: none;
-    text-decoration: none;
-    display: inline-block;
-
-    position: relative;
+  list-style: none;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
 }
 
 .footer-foto {
-    width : 100px;
-    height : 100px;
-    padding: 5%;
+  width: 100px;
+  height: 100px;
+  padding: 5%;
 }
 
 .footer-tekst {
-    text-align: center;
+  text-align: center;
 }
 
 .website-logo {
-    max-width: 3rem;
-    flex-grow: 1;
-    flex-basis: 0;
+  max-width: 3rem;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 .nav-link {
-    height: 10%;
-    width: auto;
+  height: 10%;
+  width: auto;
 }
 
 .display-4 {
-    width: auto;
+  width: auto;
 }
 
 .card-group-index > .card-group > .card {
-    border-radius: 44px !important;
-    border: 0 !important;
-    border-radius: 44px !important;
-    margin-right: 5%;
-    margin-bottom: 5% !important;
-    text-align: center;
+  border-radius: 44px !important;
+  border: 0 !important;
+  border-radius: 44px !important;
+  margin-right: 5%;
+  margin-bottom: 5% !important;
 }
 
 .card-group-index > .card-group {
-    margin-left: 5%;
-    padding-top: 5%;
+  margin-left: 5%;
+  padding-top: 5%;
 }
 
 .btn-primary {
-    background-color: #19FFCF;
-    color: black !important;
-    transition: transform .2s;
-    margin-top: 5%;
-    border-color: #19FFCF;
+  background-color: #19FFCF;
+  color: black !important;
+  transition: transform .2s;
+  margin-top: 5%;
+  border-color: #19FFCF;
 }
 
   .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color: #00EEFF !important;
+    background-color: #19FFCF !important;
     border: none !important;
     transform: scale(1.05);
   }
@@ -94,20 +92,23 @@ ul.topnav li a {
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .card-body-header {
-    display: flex;
+  display: flex;
+  min-height: 180px;
+  font-weight: 500
 }
 
 .festival-card-img {
-    width:150px;
-    height:150px;
+  width: 150px;
+  height: 150px;
 }
 
 .card-text {
-    max-width:200px;
+  max-width: 200px;
+  margin-left: 15px;
 }
 
 .map-responsive {
@@ -125,28 +126,27 @@ img {
 
 .justify-content-center {
   margin-top: 5%;
-  margin-bottom: 5%;  
+  margin-bottom: 5%;
 }
 
-.transport-text{
-  margin-left:20px;
-
+.transport-text {
+  margin-left: 20px;
 }
 
 .header-index {
-    background-color: #00EEFF;
-    padding-bottom:2.5%;
-    padding-top:2.5%;
+  background-color: #00EEFF;
+  padding-bottom: 2.5%;
+  padding-top: 2.5%;
 }
 
 .navbar-nav {
-    flex-direction: row;
-    justify-content: space-evenly;
-    width:100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 textarea {
-    height: 200px;
+  height: 200px;
 }
 
 input[type=text], select, textarea {
@@ -164,7 +164,7 @@ label {
 }
 
 input[type=submit] {
-  border:none;
+  border: none;
   float: right;
 }
 
@@ -190,6 +190,7 @@ input[type=submit] {
   display: table;
   clear: both;
 }
+
 @media screen and (max-width: 600px) {
   .col-25, .col-75, input[type=submit] {
     width: 100%;
@@ -204,85 +205,94 @@ input[type=submit] {
 }
 
 .card-festival-group {
-    flex: 30%; 
-    flex-direction: row;
+  flex: 30%;
+  flex-direction: row;
 }
 
 .card-group-festival > .card-group > .card {
-    text-align: center;
-    flex:50%;
+  text-align: center;
+  flex: 50%;
 }
 
 .festival-foto {
-    width:40%;
-    margin:auto;
-    margin-top: 5%;
-    
+  width: 40%;
+  margin: auto;
+  margin-top: 5%;
 }
 
 .card-group .card:nth-child(1) {
-    background-color: #166BE7;
+  background-color: #166BE7;
+  color: white;
 }
 
 .card-group .card:nth-child(2) {
-    background-color: #00EEFF;
+  background-color: #00EEFF;
+}
+
+background-color: #166BE7 !important;
+
+
+.card-group .card:nth-child(3) {
+  background-color: #00EEFF;
 }
 
 .card-group .card:nth-child(3) {
-    background-color: #00EEFF;
-}
-
-.card-group .card:nth-child(3) {
-    background-color: #00EEFF;
+  background-color: #00EEFF;
 }
 
 .card-group .card:nth-child(4) {
-    background-color: #166BE7;
+  background-color: #166BE7;
+  color: white;
 }
 
 .card-group .card:nth-child(5) {
-    background-color: #166BE7;
+  background-color: #166BE7;
+  color: white;
 }
 
 .card-group .card:nth-child(6) {
-    background-color: #00EEFF;
+  background-color: #00EEFF;
 }
 
 @media screen and (max-width: 575px) {
 
-    .card-group .card:nth-child(1) {
-        background-color: #166BE7;
-    }
+  .card-group .card:nth-child(1) {
+    background-color: #166BE7;
+    color: white;
+  }
 
-    .card-group .card:nth-child(2) {
-        background-color: #00EEFF;
-    }
+  .card-group .card:nth-child(2) {
+    background-color: #00EEFF;
+    color: white;
+  }
 
-    .card-group .card:nth-child(3) {
-        background-color: #166BE7;
-    }
+  .card-group .card:nth-child(3) {
+    background-color: #166BE7;
+    color: white;
+  }
 
-    .card-group .card:nth-child(4) {
-        background-color: #00EEFF;
-    }
+  .card-group .card:nth-child(4) {
+    background-color: #00EEFF;
+  }
 
-    .card-group .card:nth-child(5) {
-        background-color: #166BE7;
-    }
+  .card-group .card:nth-child(5) {
+    background-color: #166BE7;
+    color: white;
+  }
 
-    .card-group .card:nth-child(6) {
-        background-color: #00EEFF;
-    }
+  .card-group .card:nth-child(6) {
+    background-color: #00EEFF;
+  }
 }
 
-    .card-group > .card {
-        flex: auto;
-    }
+.card-group > .card {
+  flex: auto;
+}
 
-    .scrollbox {
-        width: auto;
-        height: auto;
-    }
+.scrollbox {
+  width: auto;
+  height: auto;
+}
 
 .accordion {
   background-color: #eee;
@@ -307,17 +317,33 @@ input[type=submit] {
   display: none;
   overflow: hidden;
 }
-    }
 
-    .h1, h1 {
-        text-align: center;
-    }
+}
 
-    .row-button {
-        justify-content: flex-end;
+.h1, h1 {
+  text-align: center;
+}
 
-    }
+.row-button {
+  justify-content: flex-end;
+}
 
-.beschrijving{
+.beschrijving {
   margin: auto;
+}
+
+.index-card {
+  min-width: 23rem;
+}
+
+festival-card-text {
+  margin-left: 15px;
+}
+
+.card-title {
+  margin-left: 10px;
+}
+
+.scrollbox{
+  max-height: 400px;
 }
