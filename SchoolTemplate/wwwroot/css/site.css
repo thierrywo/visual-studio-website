@@ -229,9 +229,6 @@ input[type=submit] {
   background-color: #00EEFF;
 }
 
-background-color: #166BE7 !important;
-
-
 .card-group .card:nth-child(3) {
   background-color: #00EEFF;
 }
@@ -348,4 +345,9 @@ festival-card-text {
 
 .scrollbox{
   max-height: 300px;
+}
+
+.card-group-hfaq > .card-group > .card {
+    text-align: center;
+    flex: 50%;
 }
