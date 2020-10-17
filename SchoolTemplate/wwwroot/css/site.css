@@ -220,58 +220,104 @@ input[type=submit] {
   margin-top: 5%;
 }
 
-.card-group-index > .card-group .card:nth-child(1) {
-  background-color: #166BE7;
-  color: white;
-}
 
+/*Festivalpagina card colours*/
 .card-group-festival > .card-group .card:nth-child(1) {
   background-color: #176CE8;
   color: white;
 }
 
-.card-group .card:nth-child(2) {
-  background-color: #00EEFF;
-}
-.card-group .card:nth-child(3) {
+.card-group-festival > .card-group .card:nth-child(2) {
   background-color: #00EEFF;
 }
 
-.card-group .card:nth-child(3) {
+.card-group-festival > .card-group .card:nth-child(3) {
   background-color: #00EEFF;
 }
 
+.card-group-festival > .card-group .card:nth-child(4) {
+  background-color: #176CE8;
+  color: white;
+}
+
+@media screen and (max-width: 575px) {
+  .card-group-festival > .card-group .card:nth-child(1) {
+    background-color: #176CE8;
+    color: white;
+    margin: 0px;
+  }
+
+  .card-group-festival > .card-group .card:nth-child(2) {
+    background-color: #00EEFF;
+    margin: 0px;
+  }
+
+  .card-group-festival > .card-group .card:nth-child(3) {
+    background-color: #176CE8;
+    color: white;
+    margin: 0px;
+  }
+
+  .card-group-festival > .card-group .card:nth-child(4) {
+    background-color: #00EEFF;
+    color: black;
+    margin: 0px;
+  }
+}
+
+
+
+/*index pagina card colours*/
+/*Woohah*/
+.card-group-index > .card-group .card:nth-child(1) { 
+  background-color: #166BE7;
+  color: white;
+}
+
+
+
+/*Lowlands*/
+.card-group-index > .card-group .card:nth-child(2) {
+  background-color: #00EEFF;
+}
+
+/*pinkpop*/
+.card-group-index > .card-group .card:nth-child(3) {
+  background-color: #00EEFF;
+}
+
+/*hockeyloverz*/
 .card-group-index > .card-group .card:nth-child(4) {
   background-color: #166BE7;
   color: white;
 }
-
+/*dgtl*/
 .card-group .card:nth-child(5) {
   background-color: #166BE7;
   color: white;
 }
-
+/*AOA*/
 .card-group .card:nth-child(6) {
   background-color: #00EEFF;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 920px) {
 
-  .card-group .card:nth-child(1) {
+  .card-group-index > .card-group .card:nth-child(1) {
     background-color: #166BE7;
     color: white;
   }
 
-  .card-group .card:nth-child(2) {
+  .card-group-index > .card-group .card:nth-child(2) {
     background-color: #00EEFF;
   }
 
-  .card-group .card:nth-child(3) {
+  .card-group-index > .card-group .card:nth-child(3) {
     background-color: #166BE7;
     color: white;
   }
 
-  .card-group .card:nth-child(4) {
+  .card-group-index > .card-group .card:nth-child(4) {
     background-color: #00EEFF;
     color: black;
   }
