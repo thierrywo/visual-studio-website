@@ -332,6 +332,8 @@ background-color: #166BE7 !important;
   margin: auto;
 }
 
+
+
 .index-card {
   min-width: 23rem;
 }
@@ -345,5 +347,5 @@ festival-card-text {
 }
 
 .scrollbox{
-  max-height: 400px;
+  max-height: 300px;
 }

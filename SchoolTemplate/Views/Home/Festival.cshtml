@@ -28,13 +28,13 @@
                     </h3>
                     <h3> <br /></h3>
                     <h3>
-                        Dag 2 <br />
-                        @artiest.Dag2Act
+                      Dag 2 <br />
+                      @Html.Raw(artiest.Dag2Act)
                     </h3>
                     <h3> <br /></h3>
                     <h3>
-                        Dag 3<br />
-                        @artiest.Dag3Act
+                      Dag 3<br />
+                      @Html.Raw(artiest.Dag3Act)
                     </h3>
                 </div>
             }
@@ -44,14 +44,15 @@
             @foreach (Prijs prijs in Model.Prijzen)
             {
                 <div class="scrollbox">
-
+                  <div class="prijzen">
                     <h3>
-                        Dag 1:  @prijs.Dag1<br />
-                        Dag 2:  @prijs.Dag2<br />
-                        Dag 3   @prijs.Dag3<br />
-                        Weekend: @prijs.WeekendExcl<br />
-                        Weekend + Camping:  @prijs.WeekendIncl
+                      Dag 1:  @prijs.Dag1<br />
+                      Dag 2:  @prijs.Dag2<br />
+                      Dag 3   @prijs.Dag3<br />
+                      Weekend: @prijs.WeekendExcl<br />
+                      Weekend + Camping:  @prijs.WeekendIncl
                     </h3>
+                  </div>
                 </div>
             }
 
