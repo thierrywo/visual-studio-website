@@ -350,3 +350,8 @@ festival-card-text {
 .scrollbox{
   max-height: 300px;
 }
+
+.card-group-hfaq > .card-group > .card {
+    text-align: center;
+    flex: 50%;
+}
