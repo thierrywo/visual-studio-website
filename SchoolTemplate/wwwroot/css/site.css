@@ -220,15 +220,19 @@ input[type=submit] {
   margin-top: 5%;
 }
 
-.card-group .card:nth-child(1) {
+.card-group-index > .card-group .card:nth-child(1) {
   background-color: #166BE7;
+  color: white;
+}
+
+.card-group-festival > .card-group .card:nth-child(1) {
+  background-color: #176CE8;
   color: white;
 }
 
 .card-group .card:nth-child(2) {
   background-color: #00EEFF;
 }
-
 .card-group .card:nth-child(3) {
   background-color: #00EEFF;
 }
@@ -237,7 +241,7 @@ input[type=submit] {
   background-color: #00EEFF;
 }
 
-.card-group .card:nth-child(4) {
+.card-group-index > .card-group .card:nth-child(4) {
   background-color: #166BE7;
   color: white;
 }
