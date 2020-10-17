@@ -5,57 +5,71 @@
   //List<Festival> artiesten = ViewData["artiesten"] as List<Festival>;
 }
 <div class="card-group-festival">
-    <div class="card-group">
-        <div class="card">
-          <div class="card-body">
-            <img src=@Model.Plaatje class="festival-foto"> <br/>
-            <a href=# class="btn btn-primary ">Koop Tickets</a>
+  <div class="card-group">
+    <div class="card">
+      <div class="card-body">
+        <img src=@Model.Plaatje class="festival-foto"> <br />
+        <a href=# class="btn btn-primary ">Koop Tickets</a>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <h3 class="beschrijving">@Model.Beschrijving</h3>
+    </div>
+
+    <div class="card scroller">
+      @foreach (Artiest artiest in Model.Artiesten)
+      {
+        <div class="scrollbox">
+          <h1 class="artiestheader">Acts</h1>
+          <h3>
+            <div class="artiestdag">
+              Dag 1:
+            </div>
+            <div class="artiestlijst">
+              @Html.Raw(artiest.Dag1Act)
+            </div>
+          </h3>
+          <br />
+          <h3>
+            <div class="artiestdag">
+              Dag 2:
+            </div>
+            <div class="artiestlijst">
+              @Html.Raw(artiest.Dag2Act)
+            </div>
+
+          </h3>
+          <br />
+          <h3>
+            <div class="artiestdag">
+              Dag 3:
+            </div>
+            <div class="artiestlijst">
+              @Html.Raw(artiest.Dag3Act)
+            </div>
+          </h3>
+        </div>
+      }
+    </div>
+
+    <div class="card scroller">
+      @foreach (Prijs prijs in Model.Prijzen)
+      {
+        <div class="scrollbox">
+          <div class="prijzen">
+            <h3>
+              Dag 1:  @prijs.Dag1<br />
+              Dag 2:  @prijs.Dag2<br />
+              Dag 3   @prijs.Dag3<br />
+              Weekend: @prijs.WeekendExcl<br />
+              Weekend + Camping:  @prijs.WeekendIncl
+            </h3>
           </div>
         </div>
+      }
 
-        <div class="card">
-          
-            <h3 class="beschrijving">@Model.Beschrijving</h3>
-        </div>
-
-        <div class="card scroller">
-            @foreach (Artiest artiest in Model.Artiesten)
-            {
-                <div class="scrollbox">
-                    <h3>
-                        Dag 1: <br />
-                        @Html.Raw(artiest.Dag1Act)
-                    </h3>
-                    <h3> <br /></h3>
-                    <h3>
-                      Dag 2 <br />
-                      @Html.Raw(artiest.Dag2Act)
-                    </h3>
-                    <h3> <br /></h3>
-                    <h3>
-                      Dag 3<br />
-                      @Html.Raw(artiest.Dag3Act)
-                    </h3>
-                </div>
-            }
-        </div>
-
-        <div class="card scroller">
-            @foreach (Prijs prijs in Model.Prijzen)
-            {
-                <div class="scrollbox">
-                  <div class="prijzen">
-                    <h3>
-                      Dag 1:  @prijs.Dag1<br />
-                      Dag 2:  @prijs.Dag2<br />
-                      Dag 3   @prijs.Dag3<br />
-                      Weekend: @prijs.WeekendExcl<br />
-                      Weekend + Camping:  @prijs.WeekendIncl
-                    </h3>
-                  </div>
-                </div>
-            }
-
-        </div>
     </div>
+  </div>
 </div>
