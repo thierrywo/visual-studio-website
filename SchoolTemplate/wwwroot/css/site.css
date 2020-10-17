@@ -222,7 +222,7 @@ input[type=submit] {
 
 .card-group .card:nth-child(1) {
   background-color: #166BE7;
-  /*color: white;*/
+  color: white;
 }
 
 .card-group .card:nth-child(2) {
@@ -239,12 +239,12 @@ input[type=submit] {
 
 .card-group .card:nth-child(4) {
   background-color: #166BE7;
-  /*color: white;*/
+  color: white;
 }
 
 .card-group .card:nth-child(5) {
   background-color: #166BE7;
-  /*color: white;*/
+  color: white;
 }
 
 .card-group .card:nth-child(6) {
@@ -255,26 +255,26 @@ input[type=submit] {
 
   .card-group .card:nth-child(1) {
     background-color: #166BE7;
-    /*color: white;*/
+    color: white;
   }
 
   .card-group .card:nth-child(2) {
     background-color: #00EEFF;
-    /*color: white;*/
   }
 
   .card-group .card:nth-child(3) {
     background-color: #166BE7;
-    /*color: white;*/
+    color: white;
   }
 
   .card-group .card:nth-child(4) {
     background-color: #00EEFF;
+    color: black;
   }
 
   .card-group .card:nth-child(5) {
     background-color: #166BE7;
-    /*color: white;*/
+    color: white;
   }
 
   .card-group .card:nth-child(6) {
