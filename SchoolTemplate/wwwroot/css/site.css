@@ -251,7 +251,7 @@ input[type=submit] {
   background-color: #00EEFF;
 }
 
-@media screen and (max-width: 971px) {
+@media screen and (max-width: 915px) {
 
   .card-group .card:nth-child(1) {
     background-color: #166BE7;
