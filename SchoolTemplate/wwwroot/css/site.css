@@ -254,7 +254,7 @@ background-color: #166BE7 !important;
   background-color: #00EEFF;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 915px) {
 
   .card-group .card:nth-child(1) {
     background-color: #166BE7;
