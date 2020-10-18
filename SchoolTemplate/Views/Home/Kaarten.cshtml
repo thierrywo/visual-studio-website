@@ -7,3 +7,29 @@
 <div class="Kaartentitel">
   @Model.Naam
 </div>
+
+<div class="opties">
+  @foreach (Prijs prijs in Model.Prijzen)
+  {
+    @if (!(String.IsNullOrEmpty(@prijs.Dag1)))
+    {
+      <h3>Dag 1:   @prijs.Dag1</h3>
+    }
+    @if (!(String.IsNullOrEmpty(@prijs.Dag2)))
+    {
+      <h3>Dag 2:   @prijs.Dag2</h3>
+    }
+    @if (!(String.IsNullOrEmpty(@prijs.Dag3)))
+    {
+      <h3>Dag 3:   @prijs.Dag3</h3>
+    }
+    @if (!(String.IsNullOrEmpty(prijs.WeekendExcl)))
+    {
+      <h3>Weekend: @prijs.WeekendExcl</h3>
+    }
+    @if (!(String.IsNullOrEmpty(prijs.WeekendIncl)))
+    {
+      <h3>Weekend + Camping:  @prijs.WeekendIncl</h3>
+    }
+  }
+</div>
