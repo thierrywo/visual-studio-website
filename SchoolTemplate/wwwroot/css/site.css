@@ -16,11 +16,12 @@ ul.topnav li a {
   padding: 14px 16px;
 }
 
-.footer {
+footer {
+  padding-top: 20px;
   width: 100%;
   height: 100px;
-  border-top-style: solid;
-  border-top-color: #FFF;
+  border-top: solid black 2px;
+
 }
 
 
@@ -38,6 +39,7 @@ ul.topnav li a {
 }
 
 .footer-tekst {
+  margin: auto;
   text-align: center;
 }
 
@@ -113,7 +115,6 @@ img {
 
 .map-responsive {
   overflow: hidden;
-  padding-bottom: 5%;
   position: relative;
 }
 
@@ -413,6 +414,7 @@ festival-card-text {
 }
 
 .artiestheader {
+  margin-top: 10px;
   font-weight: 900;
 }
 
