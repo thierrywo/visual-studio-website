@@ -235,11 +235,11 @@ input[type=submit] {
 
 .card-group-festival > .card-group .card:nth-child(3) {
   background-color: #00EEFF;
+
 }
 
 .card-group-festival > .card-group .card:nth-child(4) {
   background-color: #176CE8;
-  color: white;
 }
 
 @media screen and (max-width: 575px) {
@@ -347,7 +347,7 @@ input[type=submit] {
   padding: 18px;
   width: 100%;
   text-align: left;
-  border: none;
+  border: 0px;
   outline: none;
   transition: 0.4s;
 
@@ -357,6 +357,7 @@ input[type=submit] {
 
 .panel {
   padding: 0 18px;
+  border: none;
   display: none;
   overflow: hidden;
   text-align: left;
@@ -436,4 +437,19 @@ festival-card-text {
 
 .hfaqtitel{
   font-weight: 800;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #19FFCF;
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
 }
