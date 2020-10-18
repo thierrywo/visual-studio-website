@@ -6,27 +6,27 @@
 
 <div class="card-group-hfaq">
     <div class="card-group">
-        <div class="card">
-            <div class="Huisregels">
-                <h2>Huisregels</h2>
-                @foreach (Huisregel huisregel in Model.huisregels)
-                {
-                    <button class="accordion">@huisregel.Regel</button>
-                    <div class="panel">
-                        <p>@huisregel.Toelichting</p>
-                    </div>
-                }
+        <div class="card huisregelknop">
+          <div class="huisregels">
+            <h2>Huisregels</h2>
+              @foreach (Huisregel huisregel in Model.huisregels)
+              {
+                <button class="accordion huisregelknop">@huisregel.Regel</button>
+                <div class="panel huisregelknop">
+                  <p>@huisregel.Toelichting</p>
+                </div>
+              }
+              </div>
             </div>
-        </div>
 
 
-        <div class="card">
+        <div class="card FAQknop">
             <div class="FAQ">
                 <h2>FAQ</h2>
                 @foreach (FAQ faq in Model.faqs)
                 {
-                    <button class="accordion">@faq.FAQtekst</button>
-                    <div class="panel">
+                    <button class="accordion FAQknop">@faq.FAQtekst</button>
+                    <div class="panel FAQknop">
                         <p>@faq.antwoord</p>
                     </div>
                 }
@@ -51,3 +51,4 @@
       }
     });
   }</script>
+

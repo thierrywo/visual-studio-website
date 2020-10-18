@@ -202,7 +202,9 @@ input[type=submit] {
 .scrollbox {
   overflow: auto;
   height: 200px;
-  width: 200px;
+  max-height: 310px;
+  width: auto;
+  height: auto;
 }
 
 .card-festival-group {
@@ -338,14 +340,11 @@ input[type=submit] {
   flex: auto;
 }
 
-.scrollbox {
-  width: auto;
-  height: auto;
-}
+
 
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: none;
+  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -356,13 +355,11 @@ input[type=submit] {
 }
 
   .active, .accordion:hover {
-    background-color: #ccc;
   }
 
 
 .panel {
   padding: 0 18px;
-  background-color: white;
   display: none;
   overflow: hidden;
 }
@@ -395,9 +392,7 @@ festival-card-text {
   margin-left: 10px;
 }
 
-.scrollbox{
-  max-height: 300px;
-}
+
 
 .artiestdag{
   text-align: left;
@@ -419,6 +414,28 @@ festival-card-text {
 }
 
 .card-group-hfaq > .card-group > .card {
-    text-align: center;
-    flex: 50%;
+  text-align: center;
+  flex: 50%;
+  margin-bottom: 0;
+}
+
+.huisregels {
+  background-color: #00EEFF;
+}
+
+.FAQ {
+  background-color: #398AFF;
+}
+
+.accordion {
+  
+}
+
+.huisregelknop {
+  background-color: #00EEFF;
+}
+
+.FAQknop{
+    background-color: #398AFF;
+
 }
