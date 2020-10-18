@@ -151,6 +151,13 @@ namespace SchoolTemplate.Controllers
       return View();
     }
 
+ 
+    [Route("Kaarten/{id}")]
+    public IActionResult Kaarten(string id)
+    {
+      var model = GetFestival(id);
+      return View(model);
+    }
 
     [Route("contact")]
     public IActionResult Contact()
