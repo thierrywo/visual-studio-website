@@ -1,23 +1,23 @@
 ﻿@using SchoolTemplate.Database
 @model HuisregelsFAQViewModel
 @{
-    ViewData["Title"] = "HuisregelsFAQ";
+  ViewData["Title"] = "HuisregelsFAQ";
 }
 
 <div class="card-group-hfaq">
     <div class="card-group">
         <div class="card huisregelknop">
-          <div class="huisregels">
-            <h2>Huisregels</h2>
-              @foreach (Huisregel huisregel in Model.huisregels)
-              {
-                <button class="accordion huisregelknop">@huisregel.Regel</button>
-                <div class="panel huisregelknop">
-                  <p>@huisregel.Toelichting</p>
-                </div>
-              }
-              </div>
+            <div class="Huisregels">
+                <h2>Huisregels</h2>
+                @foreach (Huisregel huisregel in Model.huisregels)
+                {
+                    <button class="accordion huisregelknop hfaqtitel">@Html.Raw(huisregel.Regel)</button>
+                    <div class="panel">
+                        <p>@Html.Raw(huisregel.Toelichting)</p>
+                    </div>
+                }
             </div>
+        </div>
 
 
         <div class="card FAQknop">
@@ -25,9 +25,9 @@
                 <h2>FAQ</h2>
                 @foreach (FAQ faq in Model.faqs)
                 {
-                    <button class="accordion FAQknop">@faq.FAQtekst</button>
+            <button class="accordion FAQknop hfaqtitel">@Html.Raw(faq.FAQtekst)</button>
                     <div class="panel FAQknop">
-                        <p>@faq.antwoord</p>
+                      <p>@Html.Raw(faq.antwoord)</p>
                     </div>
                 }
 
@@ -51,4 +51,3 @@
       }
     });
   }</script>
-

@@ -21,7 +21,6 @@ footer {
   width: 100%;
   height: 100px;
   border-top: solid black 2px;
-
 }
 
 
@@ -264,8 +263,7 @@ input[type=submit] {
   .card-group-festival > .card-group .card:nth-child(4) {
     background-color: #00EEFF;
     color: black;
-        margin: 0px;
-
+    margin: 0px;
   }
 }
 
@@ -273,7 +271,7 @@ input[type=submit] {
 
 /*index pagina card colours*/
 /*Woohah*/
-.card-group-index > .card-group .card:nth-child(1) { 
+.card-group-index > .card-group .card:nth-child(1) {
   background-color: #166BE7;
   color: white;
 }
@@ -352,19 +350,20 @@ input[type=submit] {
   border: none;
   outline: none;
   transition: 0.4s;
+
 }
 
-  .active, .accordion:hover {
-  }
 
 
 .panel {
   padding: 0 18px;
   display: none;
   overflow: hidden;
+  text-align: left;
+  font-weight: 400;
 }
 
-}
+
 
 .h1, h1 {
   text-align: center;
@@ -394,7 +393,7 @@ festival-card-text {
 
 
 
-.artiestdag{
+.artiestdag {
   text-align: left;
   margin-top: 10px;
   margin-left: 20%;
@@ -427,15 +426,14 @@ festival-card-text {
   background-color: #398AFF;
 }
 
-.accordion {
-  
-}
-
 .huisregelknop {
   background-color: #00EEFF;
 }
 
-.FAQknop{
-    background-color: #398AFF;
+.FAQknop {
+  background-color: #398AFF;
+}
 
+.hfaqtitel{
+  font-weight: 800;
 }
