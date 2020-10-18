@@ -21,16 +21,18 @@
     <div class="card scroller">
       @foreach (Artiest artiest in Model.Artiesten)
       {
-        <div class="scrollbox">
-          <h1 class="artiestheader">Acts</h1>
-          <h3>
-            <div class="artiestdag">
-              Dag 1:
-            </div>
-            <div class="artiestlijst">
-              @Html.Raw(artiest.Dag1Act)
-            </div>
-          </h3>
+      <div class="scrollbox">
+        <h1 class="artiestheader">Acts</h1>
+        <h3>
+          <div class="artiestdag">
+            Dag 1:
+          </div>
+          <div class="artiestlijst">
+            @Html.Raw(artiest.Dag1Act)
+          </div>
+        </h3>
+        @if (!(String.IsNullOrEmpty(artiest.Dag2Act)))
+        {
           <br />
           <h3>
             <div class="artiestdag">
@@ -39,8 +41,10 @@
             <div class="artiestlijst">
               @Html.Raw(artiest.Dag2Act)
             </div>
-
           </h3>
+        }
+        @if (!(String.IsNullOrEmpty(artiest.Dag3Act)))
+        {
           <br />
           <h3>
             <div class="artiestdag">
@@ -50,7 +54,8 @@
               @Html.Raw(artiest.Dag3Act)
             </div>
           </h3>
-        </div>
+        }
+      </div>
       }
     </div>
 
