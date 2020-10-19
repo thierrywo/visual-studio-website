@@ -3,42 +3,46 @@
 @{
   ViewData["Title"] = "HuisregelsFAQ";
 }
-
+<!--Weer gebruik gemaakt van bootstrap cards voor de responsiveness, card/vak voor de huisregels-->
 <div class="card-group-hfaq">
-    <div class="card-group">
-        <div class="card huisregelknop">
-            <div class="Huisregels">
-                <h2>Huisregels</h2>
-                @foreach (Huisregel huisregel in Model.huisregels)
-                {
-                    <button class="accordion huisregelknop hfaqtitel">@Html.Raw(huisregel.Regel)</button>
-                    <div class="panel">
-                        <p>@Html.Raw(huisregel.Toelichting)</p>
-                    </div>
-                }
-            </div>
-        </div>
-
-
-        <div class="card FAQknop">
-            <div class="FAQ">
-                <h2>FAQ</h2>
-                @foreach (FAQ faq in Model.faqs)
-                {
-            <button class="accordion FAQknop hfaqtitel">@Html.Raw(faq.FAQtekst)</button>
-                    <div class="panel FAQknop">
-                      <p>@Html.Raw(faq.antwoord)</p>
-                    </div>
-                }
-
-            </div>
-        </div>
+  <div class="card-group">
+    <div class="card huisregelknop">
+      <div class="Huisregels">
+        <h2>Huisregels</h2>
+        <!--Huisregels en toelichting komt uit de database vandaar een for loop-->
+        @foreach (Huisregel huisregel in Model.huisregels)
+        {
+          <!-- Voor de uitklap functie is een accordion gebruikt-->
+          <button class="accordion huisregelknop hfaqtitel">@Html.Raw(huisregel.Regel)</button>
+          <!--Het uitgeklapte gedeelte-->
+          <div class="panel">
+            <p>@Html.Raw(huisregel.Toelichting)</p>
+          </div>
+        }
+      </div>
     </div>
+    <!--Card/vak voor de FAQ-->
+    <div class="card FAQknop">
+      <div class="FAQ">
+        <h2>FAQ</h2>
+        <!--FAQ en antwoordkomt ook uit de databasevandaar een for loop-->
+        @foreach (FAQ faq in Model.faqs)
+        {
+          <!-- Voor de uitklap functie is een accordion gebruikt-->
+          <button class="accordion FAQknop hfaqtitel">@Html.Raw(faq.FAQtekst)</button>
+          <!--Het uitgeklapte gedeelte-->
+          <div class="panel FAQknop">
+            <p>@Html.Raw(faq.antwoord)</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </div>
-
+<!--Script voor het uitklappen-->
 <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+  var acc = document.getElementsByClassName("accordion");
+  var i;
 
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
@@ -50,4 +54,5 @@
         panel.style.display = "block";
       }
     });
-  }</script>
+  }
+</script>
