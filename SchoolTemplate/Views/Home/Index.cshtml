@@ -1,49 +1,55 @@
 ﻿@using SchoolTemplate.Database;
-@model List<Festival>
-@{
-  ViewData["Title"] = "Home Page";
-}
-
-<div class="cover-foto">
-  <img src="/Fotos/coverfoto.png" class="img-fluid" alt="Responsive image">
-</div>
-<div class="header-index">
-  <div class="text-center">
-    <h1>De Logtenberg</h1>
-    <p>"Een prachtige locatie voor een prachtig feestje"</p>
+@model List
+<Festival>
+  @{
+    ViewData["Title"] = "Home Page";
+  }
+  <!--De mooie foto bovenaan de pagina-->
+  <div class="cover-foto">
+    <img src="/Fotos/coverfoto.png" class="img-fluid" alt="Responsive image">
   </div>
-</div>
-
-<div class="card-group-index">
-  <div class="card-group">
-    @foreach (Festival f in Model)
-    {
-
-      <div class="card" class="rounded">
-        <div class="card-body index-card">
-          <div class="card-body-header">
-            <div class="festival-card-img">
-              <img src=@f.Plaatje
-                   alt="Card image cap">
+  <!--De tekst onder het plaatje-->
+  <div class="header-index">
+    <div class="text-center">
+      <h1>De Logtenberg</h1>
+      <p>"Een prachtige locatie voor een prachtig feestje"</p>
+    </div>
+  </div>
+  <!--Elk festival wordt in het kort gepresenteerd op 1 van deze bootstrap cards-->
+  <div class="card-group-index">
+    <div class="card-group">
+      <!--For loop voor iedere kolom of rij in de tabel Festival-->
+      @foreach (Festival f in Model)
+      {
+        <div class="card" class="rounded">
+          <div class="card-body index-card">
+            <!--Het plaatje staat in de header zodat ie automatisch bovenaan komt-->
+            <div class="card-body-header">
+              <div class="festival-card-img">
+                <img src=@f.Plaatje
+                     alt="Card image cap">
+              </div>
+              <!--Informatietekst op het kaartje-->
+              <div class="festival-card-text">
+                <!--Er is hier gekozen styling in het document te doen om inviduele woorden in een header een andere weight en size te geven-->
+                <h4 class="card-title"><span style="font-size:20px; font-weight:900">@f.Naam:</span></h4>
+                <p class="card-text">
+                  <span style="font-size:20px; font-weight:900">
+                    Datum:
+                  </span> @f.Datum <br />
+                  <span style="font-size:20px; font-weight:900">Vanaf</span>: @f.Prijs  <br />
+                  @Html.Raw(f.Minimum_leeftijd)<br />
+                  <span style="font-size:20px; font-weight:900">
+                    Featuring:
+                  </span>
+                  @f.Headliners
+                </p>
+              </div>
             </div>
-            <div class="festival-card-text">
-              <h4 class="card-title"><span style="font-size:20px; font-weight:900">@f.Naam:</span></h4>
-              <p class="card-text">
-                <span style="font-size:20px; font-weight:900">
-                  Datum:
-                </span> @f.Datum <br />
-                <span style="font-size:20px; font-weight:900">Vanaf</span>: @f.Prijs  <br />
-                @Html.Raw(f.Minimum_leeftijd)<br />
-                <span style="font-size:20px; font-weight:900">
-                  Featuring:
-                </span>
-                @f.Headliners
-              </p>
-            </div>
+            <!--Knop naar individuele festivalpagina-->
+            <a href="/festivals/@f.Id" class="btn btn-primary ">Lees meer</a>
           </div>
-          <a href="/festivals/@f.Id" class="btn btn-primary ">Lees meer</a>
         </div>
-      </div>
-    }
+      }
+    </div>
   </div>
-</div>
