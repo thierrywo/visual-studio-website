@@ -4,6 +4,7 @@
   ViewData["Title"] = "kaarten";
 }
 
+<!--Kaartenbestel optie:-->
 <div class="kaartentitel">
   @Model.Naam
 </div>
@@ -11,11 +12,11 @@
 <div class="opties">
   @foreach (Prijs prijs in Model.Prijzen)
   {
-    @if (!(String.IsNullOrEmpty(@prijs.Dag1)))
-    {
-      <label for="fname">Dag 1: </label>
+    <!--Weer, eerst checken of de waarde niet NULL is voordat de tekst geprint wordt--> @if (!(String.IsNullOrEmpty(@prijs.Dag1)))
+    {<label for="fname">Dag 1: </label>
       <div class="prijs">
         <label for="prijs"> @prijs.Dag1</label>
+        <!--Dropdown menu voor het aantal-->
         <select id="quantity" name="amount">
           <option value="0">0</option>
           <option value="1">1</option>
@@ -24,68 +25,68 @@
           <option value="4">4</option>
         </select>
       </div>
-        }
-        <br />
-        @if (!(String.IsNullOrEmpty(@prijs.Dag2)))
-        {
-          <label for="fname">Dag 2:</label>
-          <div class="prijs">
-            <label for="prijs"> @prijs.Dag2</label>
-            <select id="quantity" name="amount">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-        }
-        <br />
-        @if (!(String.IsNullOrEmpty(@prijs.Dag3)))
-        {
-          <label for="fname">Dag 3: </label>
-          <div class="prijs">
-            <label for="prijs"> @prijs.Dag3</label>
-            <select id="quantity" name="amount">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-        }
-        <br />
-        @if (!(String.IsNullOrEmpty(prijs.WeekendExcl)))
-        {
-          <label for="fname">Weekend:</label>
-          <div class="prijs">
-            <label for="prijs"> @prijs.WeekendExcl</label>
-            <select id="quantity" name="amount">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-        }
-        <br />
-        @if (!(String.IsNullOrEmpty(prijs.WeekendIncl)))
-        {
-          <label for="weekendincl">Weekend + camping: </label>
-          <div class="prijs">
-            <label for="prijs"> @prijs.WeekendIncl</label>
-            <select id="quantity" name="amount">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-        }
-        }
-
+    }
+    <br />
+    @if (!(String.IsNullOrEmpty(@prijs.Dag2)))
+    {
+      <label for="fname">Dag 2:</label>
+      <div class="prijs">
+        <label for="prijs"> @prijs.Dag2</label>
+        <select id="quantity" name="amount">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
       </div>
+    }
+    <br />
+    @if (!(String.IsNullOrEmpty(@prijs.Dag3)))
+    {
+      <label for="fname">Dag 3: </label>
+      <div class="prijs">
+        <label for="prijs"> @prijs.Dag3</label>
+        <select id="quantity" name="amount">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    }
+    <br />
+    @if (!(String.IsNullOrEmpty(prijs.WeekendExcl)))
+    {
+      <label for="fname">Weekend:</label>
+      <div class="prijs">
+        <label for="prijs"> @prijs.WeekendExcl</label>
+        <select id="quantity" name="amount">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    }
+    <br />
+    @if (!(String.IsNullOrEmpty(prijs.WeekendIncl)))
+    {
+      <label for="weekendincl">Weekend + camping: </label>
+      <div class="prijs">
+        <label for="prijs"> @prijs.WeekendIncl</label>
+        <select id="quantity" name="amount">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    }
+  }
+
+</div>
 
