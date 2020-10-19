@@ -1,8 +1,13 @@
-﻿body {
+﻿/*Body*/
+
+body {
   background-color: #2CA1E9;
   font-family: 'Titillium Web', sans-serif;
   font-weight: 900;
 }
+
+
+/*Navbar*/
 
 .navbar-custom {
   background-color: #2CA1E9;
@@ -16,13 +21,26 @@ ul.topnav li a {
   padding: 14px 16px;
 }
 
+.nav-link {
+  height: 10%;
+  width: auto;
+}
+
+.navbar-nav {
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+
+/*Footer*/
+
 footer {
   padding-top: 20px;
   width: 100%;
   height: 100px;
   border-top: solid black 2px;
 }
-
 
 .footer-fotos {
   list-style: none;
@@ -42,20 +60,21 @@ footer {
   text-align: center;
 }
 
+
+/*Logo*/
+
 .website-logo {
   max-width: 3rem;
   flex-grow: 1;
   flex-basis: 0;
 }
 
-.nav-link {
-  height: 10%;
-  width: auto;
-}
-
 .display-4 {
   width: auto;
 }
+
+
+/*Card group homepage algemene styling*/
 
 .card-group-index > .card-group > .card {
   border-radius: 44px !important;
@@ -65,10 +84,17 @@ footer {
   margin-bottom: 5% !important;
 }
 
+.index-card {
+  min-width: 23rem;
+}
+
 .card-group-index > .card-group {
   margin-left: 5%;
   padding-top: 5%;
 }
+
+
+/*Website buttons styling*/
 
 .btn-primary {
   background-color: #19FFCF;
@@ -78,12 +104,16 @@ footer {
   border-color: #19FFCF;
 }
 
-  .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:focus {
     background-color: #19FFCF !important;
     border: none !important;
     transform: scale(1.05);
   }
 
+
+/*Transport */
 
 .transport-header {
   padding-bottom: 7.5%;
@@ -92,9 +122,16 @@ footer {
   text-align: center;
 }
 
+.transport-text {
+  margin-left: 20px;
+}
+
 img {
   width: 100%;
 }
+
+
+/*Card index page styling*/
 
 .card-body-header {
   display: flex;
@@ -112,6 +149,9 @@ img {
   margin-left: 15px;
 }
 
+
+/*Responsiveness*/
+
 .map-responsive {
   overflow: hidden;
   position: relative;
@@ -123,15 +163,13 @@ img {
     margin-right: auto;
   }
 
-
 .justify-content-center {
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
-.transport-text {
-  margin-left: 20px;
-}
+
+/*index pagina header*/
 
 .header-index {
   background-color: #00EEFF;
@@ -139,17 +177,16 @@ img {
   padding-top: 2.5%;
 }
 
-.navbar-nav {
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
 textarea {
   height: 200px;
 }
 
-input[type=text], select, textarea {
+
+/*contact pagina styling*/
+
+input[type=text],
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -191,12 +228,20 @@ input[type=submit] {
   clear: both;
 }
 
+
+/*Responsiveness contact pagina*/
+
 @media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
+  .col-25,
+  .col-75,
+  input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
 }
+
+
+/*Festival pagina algemene opmaak*/
 
 .scrollbox {
   overflow: auto;
@@ -223,43 +268,56 @@ input[type=submit] {
 }
 
 
-/*Festivalpagina card colours*/
+/*Festivalpagina card colours en responsiveness*/
+
+
+/*Plaatje + knop*/
+
 .card-group-festival > .card-group .card:nth-child(1) {
   background-color: #176CE8;
   color: white;
 }
 
+
+/*Beschrijving*/
+
 .card-group-festival > .card-group .card:nth-child(2) {
   background-color: #00EEFF;
 }
 
+
+/*Artiesten*/
+
 .card-group-festival > .card-group .card:nth-child(3) {
   background-color: #00EEFF;
-
 }
+
+
+/*Prijzen*/
 
 .card-group-festival > .card-group .card:nth-child(4) {
   background-color: #176CE8;
 }
 
 @media screen and (max-width: 575px) {
+  /*Plaatje + knop*/
   .card-group-festival > .card-group .card:nth-child(1) {
     background-color: #176CE8;
     color: white;
     margin: 0px;
   }
-
+  /*Beschrijving*/
   .card-group-festival > .card-group .card:nth-child(2) {
     background-color: #00EEFF;
     margin: 0px;
   }
-
+  /*Artiesten*/
   .card-group-festival > .card-group .card:nth-child(3) {
     background-color: #176CE8;
     color: white;
     margin: 0px;
   }
-
+  /*Prijzen*/
   .card-group-festival > .card-group .card:nth-child(4) {
     background-color: #00EEFF;
     color: black;
@@ -268,67 +326,79 @@ input[type=submit] {
 }
 
 
-
 /*index pagina card colours*/
+
+
 /*Woohah*/
+
 .card-group-index > .card-group .card:nth-child(1) {
   background-color: #166BE7;
   color: white;
 }
 
 
-
 /*Lowlands*/
+
 .card-group-index > .card-group .card:nth-child(2) {
   background-color: #00EEFF;
 }
 
+
 /*pinkpop*/
+
 .card-group-index > .card-group .card:nth-child(3) {
   background-color: #00EEFF;
 }
 
+
 /*hockeyloverz*/
+
 .card-group-index > .card-group .card:nth-child(4) {
   background-color: #166BE7;
   color: white;
 }
+
+
 /*dgtl*/
+
 .card-group .card:nth-child(5) {
   background-color: #166BE7;
   color: white;
 }
+
+
 /*AOA*/
+
 .card-group .card:nth-child(6) {
   background-color: #00EEFF;
 }
 
 @media screen and (max-width: 920px) {
-
+  /*Woohah*/
   .card-group-index > .card-group .card:nth-child(1) {
     background-color: #166BE7;
     color: white;
   }
-
+  /*Lowlands*/
   .card-group-index > .card-group .card:nth-child(2) {
     background-color: #00EEFF;
   }
-
+  /*pinkpop*/
   .card-group-index > .card-group .card:nth-child(3) {
     background-color: #166BE7;
     color: white;
   }
-
+  /*hockeyloverz*/
   .card-group-index > .card-group .card:nth-child(4) {
     background-color: #00EEFF;
     color: black;
   }
-
+  /*dgtl*/
   .card-group .card:nth-child(5) {
     background-color: #166BE7;
     color: white;
   }
-
+  /*AOA*/
   .card-group .card:nth-child(6) {
     background-color: #00EEFF;
   }
@@ -339,6 +409,7 @@ input[type=submit] {
 }
 
 
+/*FAQ Huisregels accordion styling*/
 
 .accordion {
   background-color: none;
@@ -350,10 +421,7 @@ input[type=submit] {
   border: 0px;
   outline: none;
   transition: 0.4s;
-
 }
-
-
 
 .panel {
   padding: 0 18px;
@@ -364,9 +432,8 @@ input[type=submit] {
   font-weight: 400;
 }
 
-
-
-.h1, h1 {
+.h1,
+h1 {
   text-align: center;
 }
 
@@ -374,15 +441,8 @@ input[type=submit] {
   justify-content: flex-end;
 }
 
-.beschrijving {
-  margin: auto;
-}
 
-
-
-.index-card {
-  min-width: 23rem;
-}
+/*Festivalpagina algemene styling*/
 
 festival-card-text {
   margin-left: 15px;
@@ -392,7 +452,9 @@ festival-card-text {
   margin-left: 10px;
 }
 
-
+.beschrijving {
+  margin: auto;
+}
 
 .artiestdag {
   text-align: left;
@@ -412,6 +474,9 @@ festival-card-text {
   margin-top: 10px;
   font-weight: 900;
 }
+
+
+/*Huisregels FAQ styling*/
 
 .card-group-hfaq > .card-group > .card {
   text-align: center;
@@ -435,24 +500,29 @@ festival-card-text {
   background-color: #398AFF;
 }
 
-.hfaqtitel{
+.hfaqtitel {
   font-weight: 800;
 }
+
+
+/*Custom scrollbar*/
 
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #19FFCF;
-  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
 }
+
+
+/*kaartverkoop pagina*/
 
 select {
   background-color: #2CA1E9;
@@ -462,7 +532,7 @@ select {
   display: flex;
 }
 
-.kaartentitel{
+.kaartentitel {
   padding-left: 15%;
   padding-top: 3%;
   padding-bottom: 4%;
@@ -473,9 +543,8 @@ select {
   padding-left: 25%;
   padding-right: 15%;
   font-size: 2vw;
-
 }
 
-.prijs{
-  float:right;
+.prijs {
+  float: right;
 }

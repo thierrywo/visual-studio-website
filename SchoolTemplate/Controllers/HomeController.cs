@@ -11,40 +11,28 @@ namespace SchoolTemplate.Controllers
 {
   public class HomeController : Controller
   {
-    // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
     string connectionString = "Server=informatica.st-maartenscollege.nl ;Port=3306;Database=109875;Uid=109875;Pwd=SprOmyro;";
 
-        public IActionResult Index()
+    //index pagina functie decleration
+    public IActionResult Index()
     {
       List<Festival> festivals = new List<Festival>();
-      // regel hierondor commenten om database uit te zettenf
       festivals = GetFestivals();
-      return View(festivals); 
-    }
-
-
-
-    public IActionResult Privacy()
-    {
-      return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-      return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+      return View(festivals);
     }
 
 
 
 
+
+    //Functie Getfestival om data uit festival tabel op te vragen
     private List<Festival> GetFestivals()
     {
       List<Festival> festivals = new List<Festival>();
 
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
-                conn.Open();
+        conn.Open();
         MySqlCommand cmd = new MySqlCommand($"select * from festival ", conn);
 
         using (var reader = cmd.ExecuteReader())
@@ -71,6 +59,8 @@ namespace SchoolTemplate.Controllers
       return festivals;
     }
 
+
+    //HuisrgelsFAQ functie en model declaration
     [Route("HuisregelsFAQ")]
     public IActionResult HuisregelsFAQ()
     {
@@ -91,6 +81,7 @@ namespace SchoolTemplate.Controllers
     }
 
 
+    //Functie, haalt data uit huisregel tabel
     private List<Huisregel> GetHuisregels()
     {
       List<Huisregel> huisregels = new List<Huisregel>();
@@ -117,6 +108,7 @@ namespace SchoolTemplate.Controllers
       }
     }
 
+    //Functie, haalt data uit FAQ tabel
     private List<FAQ> Getfaqs()
     {
       List<FAQ> faqs = new List<FAQ>();
@@ -130,7 +122,7 @@ namespace SchoolTemplate.Controllers
         {
           while (faqreader.Read())
           {
-            FAQ faq= new FAQ
+            FAQ faq = new FAQ
             {
               FAQId = faqreader["FAQId"].ToString(),
               FAQtekst = faqreader["FAQ"].ToString(),
@@ -144,14 +136,14 @@ namespace SchoolTemplate.Controllers
     }
 
 
-
+    //Route naar Transport pagina
     [Route("Transport")]
     public IActionResult Transport()
     {
       return View();
     }
 
- 
+    //Route naar kaarten pagina + declaration
     [Route("Kaarten/{id}")]
     public IActionResult Kaarten(string id)
     {
@@ -159,12 +151,14 @@ namespace SchoolTemplate.Controllers
       return View(model);
     }
 
+    //Route naar contact pagina
     [Route("contact")]
     public IActionResult Contact()
     {
       return View();
     }
 
+    //Functie die het opslaan van contactformulier aanroept als hij valid is
     [Route("contact")]
     [HttpPost]
     public IActionResult Contact(Personmodel model)
@@ -179,6 +173,7 @@ namespace SchoolTemplate.Controllers
       return View();
     }
 
+    //opslaan contactformulier in database
     private void SavePerson(Personmodel person)
     {
       using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -193,11 +188,14 @@ namespace SchoolTemplate.Controllers
       }
     }
     [Route("show-all")]
+
+
     public IActionResult ShowAll()
     {
       return View();
     }
 
+    //Individuele festivalpagina route en aangeven gebruik Getfestival functie
     [Route("festivals/{id}")]
     public IActionResult Festival(string id)
     {
@@ -205,14 +203,16 @@ namespace SchoolTemplate.Controllers
       return View(model);
     }
 
+    //Functie Getfestival om data uit  database tabellen op te vragen
     private Festival GetFestival(string id)
     {
+      //aanmaak lijst van festival data
       List<Festival> festivals = new List<Festival>();
 
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
-
+        //aanmaak lijst prijzen data in de festival lijst
         MySqlCommand prijzencmd = new MySqlCommand($"select * from prijzen where PrijsId = {id}", conn);
         List<Prijs> prijzen = new List<Prijs>();
 
@@ -231,6 +231,7 @@ namespace SchoolTemplate.Controllers
             prijzen.Add(prijs);
           }
         }
+        //aanmaak lijst artiesten data in de festival lijst
 
         MySqlCommand artiestencmd = new MySqlCommand($"select * from artiesten where FestivalId = {id}", conn);
         List<Artiest> artiesten = new List<Artiest>();
@@ -249,7 +250,7 @@ namespace SchoolTemplate.Controllers
             artiesten.Add(artiest);
           }
         }
-
+        //prijzen en artiesten pagina toevoegen aan festivallijst
         MySqlCommand cmd = new MySqlCommand($"select * from festival where id = {id}", conn);
 
         using (var reader = cmd.ExecuteReader())
@@ -257,15 +258,15 @@ namespace SchoolTemplate.Controllers
           while (reader.Read())
           {
 
-                Festival p = new Festival
+            Festival p = new Festival
             {
               Id = Convert.ToInt32(reader["Id"]),
               Naam = reader["Titel"].ToString(),
               Beschrijving = reader["Beschrijving"].ToString(),
               Artiesten = artiesten,
-              Plaatje  = reader["Plaatje"].ToString(),
+              Plaatje = reader["Plaatje"].ToString(),
               Prijzen = prijzen,
-                };
+            };
             festivals.Add(p);
           }
         }
