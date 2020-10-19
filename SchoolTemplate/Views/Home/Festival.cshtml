@@ -2,22 +2,23 @@
 @model Festival
 @{
   ViewData["Title"] = "Festival";
-  //List<Festival> artiesten = ViewData["artiesten"] as List<Festival>;
 }
+<!--Pagina is opgebouwd uit bootstrap cards om responsiveness makkelijker te maken-->
 <div class="card-group-festival">
   <div class="card-group">
+    <!--Eerste vak bevat het festivallogo en een de kaartverkooopknop-->
     <div class="card">
       <div class="card-body">
         <img src=@Model.Plaatje class="festival-foto"> <br />
         <a href="/Kaarten/@Model.Id" class="btn btn-primary ">Koop Tickets</a>
       </div>
     </div>
-
+    <!--Tweede vak, bevat de beschrijving-->
     <div class="card">
-
       <h3 class="beschrijving">@Model.Beschrijving</h3>
     </div>
-
+    <!--vak linksonder, bevat artiesten-->
+    <!--Is een scrollbaar vak, om een extreem grote vak te voorkomen-->
     <div class="card scroller ">
       @foreach (Artiest artiest in Model.Artiesten)
       {
@@ -29,12 +30,13 @@
               Dag 1:
             </div>
             <div class="artiestlijst">
+              <!--Print dag 1 acts, kan niet leeg zijn in database dus wordt altijd geprint-->
               @Html.Raw(artiest.Dag1Act)
             </div>
           </h3>
+          <!--Print dag 2 acts. Kan leeg zijn in database dus eerst wordt gecheckt of hij niet leeg is voor die geprint wordt-->
           @if (!(String.IsNullOrEmpty(artiest.Dag2Act)))
-          {
-            <br />
+          {<br />
             <h3>
               <div class="artiestdag">
                 Dag 2:
@@ -44,6 +46,7 @@
               </div>
             </h3>
           }
+          <!--Print dag 3 acts. Kan leeg zijn in database dus eerst wordt gecheckt of hij niet leeg is voor die geprint wordt-->
           @if (!(String.IsNullOrEmpty(artiest.Dag3Act)))
           {
             <br />
@@ -59,7 +62,8 @@
         </div>
       }
     </div>
-
+    <!--In dit vak zijn de plaatsen te zien, ook een scroller om een maximale grote aan te houden-->
+    <!--Ook hier wordt steeds eerst gecheckt of de waarde niet NULL is voordat ie geprint wordt-->
     <div class="card scroller">
       @foreach (Prijs prijs in Model.Prijzen)
       {
@@ -67,7 +71,6 @@
           <h1 class="artiestheader">Tarieven</h1>
           <br />
           <div class="artiestdag">
-
             @if (!(String.IsNullOrEmpty(@prijs.Dag1)))
             {
               <h3>Dag 1:   @prijs.Dag1</h3>
@@ -88,11 +91,9 @@
             {
               <h3>Weekend + Camping:  @prijs.WeekendIncl</h3>
             }
-
           </div>
         </div>
       }
-
     </div>
   </div>
 </div>
