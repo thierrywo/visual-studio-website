@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Model voor database tabel Artiesten
+
+using System;
 
 namespace SchoolTemplate.Database
 {

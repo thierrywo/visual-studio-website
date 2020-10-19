@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Model voor database tabel Prijs
+using System;
 
 namespace SchoolTemplate.Database
 {

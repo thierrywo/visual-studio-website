@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Model voor database tabel festival + toevoeging artiesten en prijzen models
+
+using System;
 using System.Collections.Generic;
 
 namespace SchoolTemplate.Database

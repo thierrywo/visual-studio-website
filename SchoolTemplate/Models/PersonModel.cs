@@ -1,3 +1,4 @@
+//Model voor het contactformulier
 using System;
 using System.ComponentModel.DataAnnotations;
 
